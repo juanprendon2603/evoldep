@@ -1,0 +1,83 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+---
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página Principal - Club Evolución Deportiva</title>
+  </head>
+  <body>
+    <Navbar />
+    <header>
+      <div class="hero">
+        <h1>Bienvenido a Club Evolución Deportiva</h1>
+        <p>Forjando seres íntegros para la evolución de una sociedad.</p>
+      </div>
+    </header>
+    <main>
+      <section id="fortalezas">
+        <h2>Fortalezas</h2>
+        <div class="strengths">
+          <div class="strength">
+            <h3>Innovación</h3>
+            <p>Nos encontramos en una continua coevolución acorde a los nuevos conocimientos...</p>
+          </div>
+          <div class="strength">
+            <h3>Flexibilidad</h3>
+            <p>Nuestro método permite incorporar a nuestros usuarios acorde a sus necesidades...</p>
+          </div>
+          <div class="strength">
+            <h3>Compromiso con calidad</h3>
+            <p>Estamos en el compromiso de un mejoramiento continuo, de interactuar con nuestros usuarios...</p>
+          </div>
+          <div class="strength">
+            <h3>Recurso Humano</h3>
+            <p>Contamos con un personal capacitado para estar presto a nuestros usuarios y aliados estratégicos.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .hero {
+    background: url('/images/hero-bg.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  header {
+    background-color: #444;
+    color: white;
+    padding: 1rem 0;
+  }
+  main {
+    padding: 2rem 1rem;
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  .strengths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .strength {
+    flex: 1;
+    min-width: 200px;
+    background: #f0f0f0;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+</style>
