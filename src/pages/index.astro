@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
 ---
 <!DOCTYPE html>
 <html lang="es">
@@ -8,76 +8,142 @@ import Navbar from "../components/Navbar.astro";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página Principal - Club Evolución Deportiva</title>
+    <link rel="stylesheet" href="/styles.css">
   </head>
   <body>
-    <Navbar />
-    <header>
-      <div class="hero">
-        <h1>Bienvenido a Club Evolución Deportiva</h1>
-        <p>Forjando seres íntegros para la evolución de una sociedad.</p>
-      </div>
-    </header>
-    <main>
-      <section id="fortalezas">
-        <h2>Fortalezas</h2>
-        <div class="strengths">
-          <div class="strength">
-            <h3>Innovación</h3>
-            <p>Nos encontramos en una continua coevolución acorde a los nuevos conocimientos...</p>
-          </div>
-          <div class="strength">
-            <h3>Flexibilidad</h3>
-            <p>Nuestro método permite incorporar a nuestros usuarios acorde a sus necesidades...</p>
-          </div>
-          <div class="strength">
-            <h3>Compromiso con calidad</h3>
-            <p>Estamos en el compromiso de un mejoramiento continuo, de interactuar con nuestros usuarios...</p>
-          </div>
-          <div class="strength">
-            <h3>Recurso Humano</h3>
-            <p>Contamos con un personal capacitado para estar presto a nuestros usuarios y aliados estratégicos.</p>
-          </div>
+    <div class="hero">
+      <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo">
+      <h1>Bienvenido a Club Evolución Deportiva</h1>
+      <p>Forjando seres íntegros para la evolución de una sociedad.</p>
+      <div class="container">
+        <div class="buttons">
+          <a href="/inicio" class="button">Visita nuestra página web</a>
+          <a href="mailto:tu-email@ejemplo.com" class="button">Escríbenos un email</a>
+          <a href="https://wa.me/1234567890" target="_blank" class="button">Hablemos por WhatsApp</a>
         </div>
-      </section>
-    </main>
-    <Footer />
+        <div class="social-icons">
+          <a href="https://www.facebook.com/tu-pagina" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/tu-pagina" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
+          <a href="https://www.instagram.com/tu-pagina" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
+  body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
   }
+
   .hero {
-    background: url('/images/hero-bg.jpg') no-repeat center center;
-    background-size: cover;
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
-  }
-  header {
-    background-color: #444;
-    color: white;
-    padding: 1rem 0;
-  }
-  main {
-    padding: 2rem 1rem;
-  }
-  section {
-    margin-bottom: 2rem;
-  }
-  .strengths {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
   }
-  .strength {
-    flex: 1;
-    min-width: 200px;
-    background: #f0f0f0;
-    padding: 1rem;
+
+  .hero .logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease; /* Transición para suavizar el efecto */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .container {
+    text-align: center;
+    margin-top: 3rem; /* Aumento del espacio superior */
+    margin-bottom: 3rem; /* Aumento del espacio inferior */
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para que los botones puedan envolver en pantallas pequeñas */
+    margin-top: 2rem; /* Espacio arriba de los botones */
+    margin-bottom: 2rem; /* Espacio abajo de los botones */
+  }
+
+  .buttons .button {
+    margin: 0.5rem;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    color: white;
+    background-color: #ff6600;
     border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    transform: rotate(-5deg);
+  }
+
+  .buttons .button:hover {
+    background-color: #cc5200;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transform: rotate(0deg);
+  }
+
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem; /* Espacio arriba de los íconos sociales */
+    margin-bottom: 3rem; /* Aumento del espacio abajo de los íconos sociales */
+  }
+
+  .social-icons a {
+    display: inline-block;
+    margin: 0 1.5rem; /* Aumento del espacio entre los íconos sociales */
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .social-icons a:hover {
+    transform: scale(1.1);
+  }
+
+  .social-icons a img {
+    width: 80px; /* Ajusta el tamaño de los íconos según sea necesario */
+    height: 80px;
+    transition: transform 0.3s ease; /* Transición para suavizar el efecto */
+  }
+
+  /* Efecto de movimiento al pasar el mouse sobre el logo */
+  .hero .logo:hover {
+    transform: scale(1.2); /* Aumenta el tamaño en un 50% */
+
+  }
+
+  /* Estilos para hacer responsive */
+  @media (max-width: 768px) {
+    .buttons {
+      flex-direction: column; /* Para que los botones se apilen verticalmente en dispositivos pequeños */
+    }
+    .social-icons {
+      margin-top: 3rem; /* Más espacio entre los íconos sociales y el texto debajo en dispositivos pequeños */
+    }
   }
 </style>
