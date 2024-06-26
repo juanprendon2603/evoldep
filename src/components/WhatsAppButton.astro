@@ -1,0 +1,199 @@
+---
+// src/components/WhatsAppButton.astro
+---
+<style>
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 1000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    
+    .whatsapp-button img {
+      width: 30px;
+      height: 30px;
+    }
+    
+    .popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      width: 400px;
+      padding: 1px;
+      z-index: 1001;
+      display: none;
+    }
+    
+    .popup-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #25D366;
+      color: white;
+      padding: 10px;
+      border-radius: 10px 10px 0 0;
+    }
+    
+    .popup-header h4 {
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .popup-header h4 img {
+      margin-right: 10px;
+      width: 24px;
+      height: 24px;
+    }
+    
+    .popup-header .close {
+      cursor: pointer;
+      background-color: #ff5c5c;
+      border-radius: 50%;
+      padding: 5px;
+      font-size: 18px;
+      line-height: 1;
+      color: white;
+    }
+    
+    .popup-body {
+      padding: 20px;
+      text-align: left;
+    }
+    
+    .popup-body p {
+      background-color: #e1ffc7;
+      border-radius: 10px;
+      padding: 10px 15px;
+      position: relative;
+      display: inline-block;
+      margin: 0;
+      text-align: left;
+      max-width: 80%;
+    }
+    
+    .popup-body p::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 10px;
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      border-top-color: #e1ffc7;
+      border-bottom: 0;
+      border-left: 0;
+      margin-left: -5px;
+      margin-bottom: -10px;
+    }
+    
+    .popup-footer {
+      padding: 10px;
+      text-align: center;
+    }
+    
+    .popup-footer button {
+      background-color: #25D366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .popup-footer button:hover {
+      background-color: #20b358;
+    }
+    
+    .popup-footer button img {
+      width: 20px;
+      height: 20px;
+      filter: invert(1); /* Invierte los colores */
+
+    }
+    </style>
+    
+    <div>
+      <div class="whatsapp-button" id="whatsapp-button">
+        <img src="/images/whatsapp.png" alt="WhatsApp Icon" />
+      </div>
+    
+      <div class="popup" id="whatsapp-popup">
+        <div class="popup-header">
+          <h4>
+            <img src="/images/whatsapp.png" alt="WhatsApp Icon" /> WhatsApp
+          </h4>
+          <span class="close" id="popup-close">×</span>
+        </div>
+        <div class="popup-body">
+          <p>Hola 👋<br />¿En qué podemos ayudarte?</p>
+        </div>
+        <div class="popup-footer">
+          <button id="start-chat">
+            <img src="/images/enviar.png" alt="Send Icon" /> Abrir chat
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const togglePopup = () => {
+          const popup = document.getElementById('whatsapp-popup');
+          const whatsappButton = document.getElementById('whatsapp-button');
+          if (popup) {
+            if (popup.style.display === 'none' || popup.style.display === '') {
+              popup.style.display = 'block';
+              if (whatsappButton) {
+                whatsappButton.style.display = 'none';
+              }
+            } else {
+              popup.style.display = 'none';
+              if (whatsappButton) {
+                whatsappButton.style.display = 'flex';
+              }
+            }
+          }
+        }
+    
+        const startChat = () => {
+          window.open('https://wa.me/1234567890', '_blank');
+        }
+    
+        const whatsappButton = document.getElementById('whatsapp-button');
+        const popupClose = document.getElementById('popup-close');
+        const startChatButton = document.getElementById('start-chat');
+    
+        if (whatsappButton) {
+          whatsappButton.addEventListener('click', togglePopup);
+        }
+    
+        if (popupClose) {
+          popupClose.addEventListener('click', togglePopup);
+        }
+    
+        if (startChatButton) {
+          startChatButton.addEventListener('click', startChat);
+        }
+      });
+    </script>
+    
