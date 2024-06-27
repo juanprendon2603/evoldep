@@ -1,58 +1,127 @@
 <nav class="navbar">
-    <div class="container">
-      <a href="/" class="logo">Club Evolución Deportiva</a>
-      <ul class="nav-links">
-        <li><a href="/">Inicio</a></li>
-        <li><a href="/nosotros">Nosotros</a></li>
-        <li><a href="/servicios">Servicios</a></li>
-        <li><a href="/actividades">Actividades y Torneos</a></li>
-        <li><a href="/noticias">Noticias y Destacados</a></li>
-        <li><a href="/contacto">Contáctenos</a></li>
-        <li>
-          <a href="https://twitter.com/tu_usuario" target="_blank">
-            <img src="/icons/twitter.svg" alt="Twitter" />
-          </a>
-        </li>
-        <li>
-          <a href="https://facebook.com/tu_usuario" target="_blank">
-            <img src="/icons/facebook.svg" alt="Facebook" />
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/tu_usuario" target="_blank">
-            <img src="/icons/instagram.svg" alt="Instagram" />
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-  <style>
-    .navbar {
-      background-color: #333;
-      color: #fff;
-      padding: 1rem;
-    }
-    .container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .logo {
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: #fff;
-    }
-    .nav-links {
-      list-style: none;
-      display: flex;
-      gap: 1rem;
-    }
-    .nav-links a {
-      text-decoration: none;
-      color: #fff;
-    }
-    .nav-links img {
-      width: 24px;
-      height: 24px;
-    }
-  </style>
+  <div class="container">
+    <a href="/" class="logo-link">
+      <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo">
+      <span>Club Evolución Deportiva</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="/inicio">Inicio</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/servicios">Servicios</a></li>
+      <li><a href="/actividades">Actividades y Torneos</a></li>
+      <li><a href="/noticias">Noticias y Destacados</a></li>
+      <li><a href="/contacto">Contáctenos</a></li>
+      <li>
+        <a href="https://twitter.com/tu_usuario" target="_blank">
+          <img src="/images/twitter.png" alt="Twitter" />
+        </a>
+      </li>
+      <li>
+        <a href="https://facebook.com/tu_usuario" target="_blank">
+          <img src="/images/facebook.png" alt="Facebook" />
+        </a>
+      </li>
+      <li>
+        <a href="https://instagram.com/tu_usuario" target="_blank">
+          <img src="/images/instagram.png" alt="Instagram" />
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Obtener la URL actual
+    const currentLocation = window.location.pathname;
+    // Obtener todos los enlaces del navbar
+    const navLinks = document.querySelectorAll('.nav-links a');
+
+    // Recorrer los enlaces y agregar la clase 'active' al enlace correspondiente
+    navLinks.forEach(link => {
+      // Si el href del enlace coincide con la URL actual, agregar la clase 'active'
+      if (link.getAttribute('href') === currentLocation) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+<style>
+  .navbar {
+    background-color: #003366;
+    color: #fff;
+    padding: 1rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
+  .logo-link .logo {
+    max-width: 50px;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+  }
+  .logo-link span {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem; /* Ajustar el espacio entre los enlaces */
+    margin: 0;
+    padding: 0;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+    position: relative; /* Necesario para la pseudo-clase ::after */
+    padding-bottom: 5px; /* Espacio para la raya inferior */
+  }
+  .nav-links a:hover {
+    color: #cc5200;
+  }
+
+  .nav-links a.active {
+    color: #cc5200;
+    border-radius: 5px;
+  }
+  .nav-links img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+  }
+  .nav-links img:hover {
+    transform: scale(1.2);
+  }
+  .nav-links li {
+    position: relative;
+  }
+  .nav-links a::after,
+  .nav-links a.active::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #cc5200;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0; /* Cambia esto para ajustar la posición de la raya inferior */
+    left: 0;
+  }
+  .nav-links a:hover::after,
+  .nav-links a.active::after {
+    width: 100%;
+  }
+</style>
