@@ -1,18 +1,150 @@
 <footer class="footer">
   <div class="container">
-    <p>© 2020 Club Evolución Deportiva. Todos los derechos reservados</p>
-    <p>Dirección: Cancha ubicada en el barrio la Casilda, Calle 16 con Carrera 16ª, Florida, Valle del Cauca, Colombia</p>
-    <p>NIT: 900874043-1 | Tel: 304 373 5676</p>
+    <!-- Fila del logo, navegación y contacto -->
+    <div class="footer-row">
+      <div class="escudo">
+        <img src="/images/logo.png" alt="Escudo Club Evolución Deportiva" class="logo-grande">
+      </div>
+      <nav class="navigation">
+        <p><strong>Navegación</strong></p>
+        <ul>
+          <li><a href="/inicio">Inicio</a></li>
+          <li><a href="/nosotros">Nosotros</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/actividades">Actividades y Torneos</a></li>
+          <li><a href="/noticias">Noticias y Destacados</a></li>
+          <li><a href="/contacto">Contáctenos</a></li>
+        </ul>
+      </nav>
+      <div class="contact">
+        <p><strong>Contacto</strong></p>
+        <p><i class="fa fa-phone"></i> (2) 263 8138</p>
+        <p><i class="fa fa-mobile"></i> (+57) 304 373 5676</p>
+        <p><i class="fa fa-map-marker"></i> Calle 16 con carrera 16ª</p>
+        <p><i class="fa fa-envelope"></i> info@evoldep.com</p>
+        <p><i class="fa fa-envelope"></i> evoldep@gmail.com</p>
+      </div>
+    </div>
+    <!-- Fila de enlaces oficiales y afiliados -->
+    <div class="footer-row links-row">
+      <div>
+        <p><strong>Enlaces Oficiales</strong></p>
+        <a href="https://imderflorida.gov.co">IMDER Florida</a> |
+        <a href="https://www.valledelcauca.gov.co">Gobernación del Valle</a>
+      </div>
+      <div>
+        <p><strong>Afiliados a</strong>: Liga Vallecaucana de Fútbol</p>
+      </div>
+      <div>
+        <p><strong>Convenio interinstitucional con</strong>:</p>
+        <img src="/images/real-tolima.png" alt="Club Deportivo Real Tolima" class="affiliate-logo">
+      </div>
+      <div>
+        <p><strong>Indumentaria deportiva aliada</strong></p>
+      </div>
+      <div>
+        <p><strong>Aliados comerciales</strong>:</p>
+        <img src="/images/sammy-cell.png" alt="Sammy Cell" class="affiliate-logo">
+      </div>
+    </div>
+    <!-- Fila del programa formativo -->
+    <div class="footer-row">
+      <div class="program">
+        <p>Nuestra entidad ofrece un programa formativo para el desarrollo integral de nuestros deportistas aficionados.</p>
+        <p>“Forjando seres íntegros para la evolución de una sociedad”</p>
+        <p>© 2024 Club Evolución Deportiva. Todos los derechos reservados</p>
+      </div>
+    </div>
+  
+    <!-- Fila de redes sociales -->
+    <div class="footer-row">
+      <div class="social-links">
+        <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
+      </div>
+    </div>
   </div>
 </footer>
+
 <style>
   .footer {
-    background-color: #222;
+    background-color: #003366; /* Color de fondo del navbar */
     color: #fff;
-    padding: 1rem;
+    padding: 2rem 1rem;
     text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
   }
   .footer p {
     margin: 0.5rem 0;
   }
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .footer a:hover {
+    color: #cc5200;
+  }
+  .footer .logo-grande {
+
+  }
+  .footer .navigation ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer .navigation ul li {
+    margin: 0.5rem 0;
+  }
+  .footer .contact p {
+    display: flex;
+    align-items: center;
+    margin: 0.3rem 0;
+  }
+  .footer .contact i {
+    margin-right: 0.5rem;
+  }
+  .footer .social-links a {
+    margin: 0 0.5rem;
+  }
+  .footer .social-links img, .footer .affiliate-logo {
+    width: 30px;
+    height: 30px;
+  }
+  .footer p strong {
+    color: #cc5200;
+  }
+  .footer .links-row div {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer .program  {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer .social-links  {
+    flex: 1;
+    text-align: center;
+  }
+
+  .footer .social-links  {
+    flex: 1;
+    text-align: center;
+  }
+
 </style>
+
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">

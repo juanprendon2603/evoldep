@@ -6,47 +6,65 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club Evolución Deportiva</title>
-  </head>
-  <body>
-    <Navbar />
-    <header>
-      <div class="hero">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Evolución Deportiva</title>
+  <link rel="icon" type="image/png" href="/images/logo.png" />
+</head>
+<body>
+  <Navbar />
+  <header>
+    <div class="hero">
+      <div class="hero-text">
         <h1>Bienvenido a Club Evolución Deportiva</h1>
         <p>Forjando seres íntegros para la evolución de una sociedad.</p>
       </div>
-    </header>
-    <main>
-      <section id="fortalezas">
-        <h2>Fortalezas</h2>
-        <div class="strengths">
-          <div class="strength">
-            <h3>Innovación</h3>
-            <p>Nos encontramos en una continua coevolución acorde a los nuevos conocimientos...</p>
+    </div>
+  </header>
+  <main>
+    <section id="fortalezas">
+      <h2>Fortalezas</h2>
+      <div class="strengths">
+        <div class="strength">
+          <div class="icon">
+            <img src="/images/innovacion.png" alt="Innovación">
           </div>
-          <div class="strength">
-            <h3>Flexibilidad</h3>
-            <p>Nuestro método permite incorporar a nuestros usuarios acorde a sus necesidades...</p>
-          </div>
-          <div class="strength">
-            <h3>Compromiso con calidad</h3>
-            <p>Estamos en el compromiso de un mejoramiento continuo, de interactuar con nuestros usuarios...</p>
-          </div>
-          <div class="strength">
-            <h3>Recurso Humano</h3>
-            <p>Contamos con un personal capacitado para estar presto a nuestros usuarios y aliados estratégicos.</p>
-          </div>
+          <h3>Innovación</h3>
+          <p>Nos encontramos en una continua coevolución acorde a los nuevos conocimientos que permite estar a la vanguardia del deporte; con nuevas herramientas pedagógicas, sociales, culturales, recreativas y formativas, que se ponen al servicio de las necesidades de la comunidad donde estamos inmersos.</p>
         </div>
-      </section>
-    </main>
-    <Footer />
-    <WhatsAppButton />
+        <div class="strength">
+          <div class="icon">
+            <img src="/images/flexibilidad.png" alt="Flexibilidad">
+          </div>
+          <h3>Flexibilidad</h3>
+          <p>Nuestro método permite incorporar a nuestros usuarios acorde a sus necesidades de una manera sencilla, práctica y dinámica; adaptada a cualquier contexto educativo y deportivo; fortaleciendo de manera armónica el trabajo en equipo.</p>
+        </div>
+        <div class="strength">
+          <div class="icon">
+            <img src="/images/calidad.png" alt="Compromiso con calidad">
+          </div>
+          <h3>Calidad</h3>
+          <p>Estamos en el compromiso de un mejoramiento continuo, de interactuar con nuestros usuarios y aliados para atender sus solicitudes y reclamos, con pleno conocimiento de que las nuevas necesidades deportivas exigen las mejores soluciones, que nos comprometen a estar acordes a ellas.</p>
+        </div>
+        <div class="strength">
+          <div class="icon">
+            <img src="/images/recurso-humano.png" alt="Recurso Humano">
+          </div>
+          <h3>Recurso Humano</h3>
+          <p>Contamos con un personal capacitado para estar presto a nuestros usuarios y aliados estratégicos.</p>
+        </div>
+      </div>
+    </section>
 
-  </body>
+    <!-- Nueva sección de Valores Corporativos -->
+    
+  </main>
+  <Footer />
+  <WhatsAppButton />
+</body>
 </html>
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -55,16 +73,29 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
     box-sizing: border-box;
   }
   .hero {
-    background: url('/images/hero-bg.jpg') no-repeat center center;
+    background: url('/images/image.png') no-repeat center center;
     background-size: cover;
     color: white;
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 4rem 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
   }
-  header {
-    background-color: #444;
-    color: white;
-    padding: 1rem 0;
+  .hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    border-radius: 10px;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .hero p {
+    font-size: 1.5rem;
+    margin: 0;
   }
   main {
     padding: 2rem 1rem;
@@ -72,16 +103,104 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
   section {
     margin-bottom: 2rem;
   }
+  #fortalezas h2,
+  #valores h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
   .strengths {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 2rem;
+    justify-content: center;
   }
   .strength {
-    flex: 1;
-    min-width: 200px;
-    background: #f0f0f0;
-    padding: 1rem;
-    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .strength:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #cc5200, #ff6600);
+  }
+  .icon {
+    margin-bottom: 1rem;
+  }
+  .icon img {
+    width: 60px;
+    height: 60px;
+    filter: brightness(0) invert(1);
+  }
+  .strength h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0 0;
+    color: white;
+    letter-spacing: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .strength p {
+    font-size: 1rem;
+    color: #fff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Estilos para la sección de valores corporativos */
+  .valores-section {
+    background: url('/images/pattern.png') no-repeat center center;
+    background-size: cover;
+    padding: 4rem 1rem;
+  }
+  .values {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+  }
+  .value-card {
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .value-card:hover {
+    transform: translateY(-10px);
+    background: linear-gradient(135deg, #cc5200, #ff6600);
+  }
+  .value-icon {
+    margin-bottom: 1rem;
+  }
+  .value-icon img {
+    width: 50px;
+    height: 50px;
+    filter: brightness(0) invert(1);
+  }
+  .value-card h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: white;
+    letter-spacing: 1px;
+  }
+  .see-all-values {
+    text-decoration: none;
+    color: white;
   }
 </style>
