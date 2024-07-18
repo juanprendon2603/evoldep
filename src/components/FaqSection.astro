@@ -1,0 +1,131 @@
+---
+---
+
+<section id="faq">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq">
+      <div class="faq-item">
+        <button class="faq-question">¿Cómo inscribirse al club?</button>
+        <div class="faq-answer">
+          <p>Haz parte de un club lleno de experiencias deportistas, en donde puedas desarrollar tus capacidades futbolísticas aprendiendo a través del juego. Para vincularte al club debes solicitar una clase de cortesía, después presentarte para el proceso de matrícula e inscripción con los siguientes documentos:</p>
+          <ul>
+            <li>Ficha de inscripción</li>
+            <li>Fotocopia Registro Civil</li>
+            <li>Fotocopia Tarjeta de identidad</li>
+            <li>Certificado afiliación a la E.P.S</li>
+            <li>Dos (2) fotos de 4 x 4 tipo carné</li>
+            <li>Paz y salvo del club anterior</li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Dónde están ubicadas las sedes?</button>
+        <div class="faq-answer">
+          <p>Florida – Valle del Cauca</p>
+          <p>Cancha principal del parque bosque municipal</p>
+          <p>Cancha barrio la cabaña</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Es posible antes de matricularme una clase práctica?</button>
+        <div class="faq-answer">
+          <p>Debes comunicarte con nosotros para asignarte el día que puedes realizar la sesión de entrenamiento, teléfono WhatsApp <a href="https://wa.me/573043735676" target="_blank">+57 3043735676</a></p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Qué beneficios tengo por estar en el club?</button>
+        <div class="faq-answer">
+          <p>Hacer parte de nuestro club, permitirá al deportista desarrollar las habilidades y destrezas para mejorar el juego, adicional a eso podrá vivir experiencias deportivas participando y compitiendo en los mejores eventos de la ciudad, como también a nivel nacional e internacional. A su vez, nuestros deportistas podrán desarrollar sus sesiones en cualquiera de nuestras sedes con excelentes formadores, y contar con un equipo de profesionales en fisioterapia y rehabilitación física en el momento que el deportista lo requiere.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿En qué eventos participa el club?</button>
+        <div class="faq-answer">
+          <p>El club participa en los mejores eventos de formación de fútbol a nivel local y regional, tales como la Copa orienten y Copa departamental de LifutbolValle. Eventos organizados por la liga vallecaucana de fútbol y Difutbol.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">¿Si mi hijo@ nunca ha jugado fútbol es posible estar en el club?</button>
+        <div class="faq-answer">
+          <p>Somos un club de formación donde el deportista podrá adquirir habilidades y destrezas individuales, como también entender del juego, aprender y entender las tareas específicas de cada posición de juego. Por eso, deberá cumplir con todas las etapas de aprendizaje que el club cuenta en su proceso de formación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <style>
+    #faq {
+      margin-bottom: 2rem;
+      padding: 2rem 1rem;
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+    #faq h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 2.5rem;
+      color: #003366;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    }
+    .faq {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    .faq-question {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.2rem;
+      background: #003366;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: left;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .faq-question:hover {
+      background: #66ccff;
+    }
+    .faq-answer {
+      display: none;
+      padding: 1rem;
+      border: 1px solid #003366;
+      border-radius: 5px;
+      background: #fff;
+      margin-top: 0.5rem;
+    }
+    .faq-answer p {
+      margin: 0;
+      color: #333;
+    }
+    .faq-answer ul {
+      padding-left: 20px;
+    }
+    .faq-answer ul li {
+      color: #333;
+    }
+  </style>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const questions = document.querySelectorAll(".faq-question");
+      questions.forEach(question => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling as HTMLElement;
+          const currentlyActive = document.querySelector(".faq-answer[style='display: block;']") as HTMLElement;
+          
+          if (currentlyActive && currentlyActive !== answer) {
+            currentlyActive.style.display = "none";
+          }
+          
+          if (answer) {
+            answer.style.display = answer.style.display === "block" ? "none" : "block";
+          }
+        });
+      });
+    });
+  </script>
+  

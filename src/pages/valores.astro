@@ -1,0 +1,293 @@
+---
+import Footer from "../components/Footer.astro";
+import Navbar from "../components/Navbar.astro";
+
+interface Photo {
+  src: string;
+  title: string;
+}
+
+const photos: Photo[] = [
+  { src: '/images/image.png', title: 'Foto 1' },
+  { src: '/images/image.png', title: 'Foto 2' },
+  { src: '/images/image.png', title: 'Foto 3' },
+  { src: '/images/image.png', title: 'Foto 4' },
+  { src: '/images/image.png', title: 'Foto 5' },
+  { src: '/images/image.png', title: 'Foto 6' },
+  { src: '/images/image.png', title: 'Foto 7' },
+  { src: '/images/image.png', title: 'Foto 8' },
+  { src: '/images/image.png', title: 'Foto 9' },
+  { src: '/images/image.png', title: 'Foto 10' },
+  { src: '/images/photo11.jpg', title: 'Foto 11' },
+  { src: '/images/photo12.jpg', title: 'Foto 12' },
+  { src: '/images/photo13.jpg', title: 'Foto 13' },
+  { src: '/images/photo14.jpg', title: 'Foto 14' },
+  { src: '/images/photo15.jpg', title: 'Foto 15' },
+  { src: '/images/photo16.jpg', title: 'Foto 16' },
+  { src: '/images/photo17.jpg', title: 'Foto 17' },
+  { src: '/images/photo18.jpg', title: 'Foto 18' },
+  { src: '/images/photo19.jpg', title: 'Foto 19' },
+  { src: '/images/photo20.jpg', title: 'Foto 20' },
+  { src: '/images/photo21.jpg', title: 'Foto 21' },
+  { src: '/images/photo22.jpg', title: 'Foto 22' },
+  { src: '/images/photo23.jpg', title: 'Foto 23' },
+  { src: '/images/photo24.jpg', title: 'Foto 24' },
+  { src: '/images/photo25.jpg', title: 'Foto 25' },
+  { src: '/images/photo26.jpg', title: 'Foto 26' },
+  { src: '/images/photo27.jpg', title: 'Foto 27' },
+  { src: '/images/photo28.jpg', title: 'Foto 28' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galería - Club Evolución Deportiva</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      main {
+        padding: 10rem 1rem 2rem 1rem; /* Ajustar el padding-top para dar espacio al navbar */
+      }
+      h1 {
+        text-align: center;
+        color: #ff6600;
+        margin-bottom: 2rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+      }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Asegurar 4 columnas por fila */
+        gap: 1.5rem;
+        padding: 2rem;
+      }
+      .photo-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+      }
+      .photo-card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .photo-card h3 {
+        margin: 0;
+        padding: 1rem;
+        font-size: 1.2rem;
+        background: #003366;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .photo-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+      /* Lightbox Styles */
+      .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .lightbox-content {
+        max-height: 80vh;
+        width: auto;
+        max-width: 90%;
+        display: block;
+        margin: auto;
+      }
+      .lightbox-caption {
+        margin: auto;
+        display: block;
+        width: 80%;
+        max-width: 700px;
+        text-align: center;
+        color: white;
+        padding: 10px 0;
+      }
+      .lightbox-content, .lightbox-caption {
+        animation: zoom 0.6s;
+      }
+      @keyframes zoom {
+        from { transform: scale(0) }
+        to { transform: scale(1) }
+      }
+      .lightbox-close {
+        position: absolute;
+        top: 15px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .lightbox-close:hover,
+      .lightbox-close:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .lightbox-prev,
+      .lightbox-next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .lightbox-prev:hover,
+      .lightbox-next:hover {
+        color: #bbb;
+      }
+      .lightbox-prev {
+        left: 20px;
+      }
+      .lightbox-next {
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <h1>Galería de Fotos</h1>
+      <div class="gallery">
+        {photos.map((photo: Photo, index: number) => (
+          <div class="photo-card" data-index={index} data-src={photo.src} data-title={photo.title} >
+            <img src={photo.src} alt={photo.title} />
+            <h3>{photo.title}</h3>
+          </div>
+        ))}
+      </div>
+      <div id="photo-data" data-photos={JSON.stringify(photos)} style="display: none;"></div>
+
+    </main>
+    <Footer />
+
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <span class="lightbox-prev">&#10094;</span>
+      <span class="lightbox-next">&#10095;</span>
+    </div>
+
+    <script>
+      let currentIndex = 0;
+      interface Photo {
+  src: string;
+  title: string;
+}
+      let photos: Photo[] = [];
+
+const photoDataElement = document.getElementById('photo-data');
+if (photoDataElement) {
+  const dataPhotos = photoDataElement.getAttribute('data-photos');
+  if (dataPhotos) {
+    photos = JSON.parse(dataPhotos);
+  }
+}
+
+
+      function openLightbox(index: number) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img') as HTMLImageElement;
+        const lightboxCaption = document.getElementById('lightbox-caption');
+
+        if (lightbox && lightboxImg && lightboxCaption) {
+          currentIndex = index;
+          lightbox.style.display = 'flex';
+          lightboxImg.src = photos[currentIndex].src;
+          lightboxCaption.innerText = photos[currentIndex].title;
+        }
+      }
+
+      function closeLightbox() {
+        const lightbox = document.getElementById('lightbox');
+        if (lightbox) {
+          lightbox.style.display = 'none';
+        }
+      }
+
+      function prevPhoto() {
+        console.log('Previous photo');
+      }
+
+      function nextPhoto() {
+        currentIndex = (currentIndex + 1) % photos.length;
+        openLightbox(currentIndex);
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const photoCards = document.querySelectorAll('.photo-card');
+        const lightbox = document.getElementById('lightbox');
+
+        if (lightbox) {
+          lightbox.style.display = 'none';
+        }
+
+        
+
+        photoCards.forEach(card => {
+          card.addEventListener('click', () => {
+           const indexAttr = card.getAttribute('data-index');
+if (indexAttr !== null) {
+  const index = parseInt(indexAttr, 10); // Aquí, 10 especifica que el número es en base 10
+  if (!isNaN(index)) {
+    openLightbox(index);
+  }
+}
+          });
+        });
+
+        const lightboxClose = document.querySelector('.lightbox-close');
+        if (lightboxClose) {
+          lightboxClose.addEventListener('click', closeLightbox);
+        }
+
+        const lightboxPrev = document.querySelector('.lightbox-prev');
+        if (lightboxPrev) {
+          lightboxPrev.addEventListener('click', prevPhoto);
+        }
+
+        const lightboxNext = document.querySelector('.lightbox-next');
+        if (lightboxNext) {
+          lightboxNext.addEventListener('click', nextPhoto);
+        }
+
+        if (lightbox) {
+          lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+              closeLightbox();
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
