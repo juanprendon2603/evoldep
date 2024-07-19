@@ -10,19 +10,80 @@ import Navbar from "../components/Navbar.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
-
   </head>
   <body>
     <Navbar />
     <main>
       <section>
         <h2>Servicios</h2>
-        <p>Descripción de los servicios que ofrece el club...</p>
+        <p>
+          El club ofrece entrenamientos deportivos en la disciplina deportiva fútbol, para niños, niñas y adolescentes que comprendan las edades entre los 4 y 17 años. Para ser un deportista evolutivo se debe tener en cuenta los siguientes servicios, requisitos y horarios por categorías. Los horarios mencionados también comprenderán atención al público general.
+        </p>
+      </section>
+
+      <section>
+        <h3>Requisitos</h3>
+        <ul>
+          <li>2 fotos 3×4 fondo blanco</li>
+          <li>Registro civil de nacimiento (original)</li>
+          <li>Fotocopia tarjeta de identidad (Mayores de 7 años)</li>
+          <li>Fotocopia carnet de salud o afiliación a la misma</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Programas y Planes</h3>
+        <ul>
+          <li>Plan pedagógico para la práctica correcta de la disciplina deportiva fútbol y otras actividades deportivas en el fomento recreativo, formativo y competitivo.</li>
+          <li>Programas deportivos distribuidos por categorías para su respectiva actividad y entrenamiento de fútbol en los días correspondientes.</li>
+          <li>Nos distribuimos en las siguientes categorías que corresponden a la edad del deportista, teniendo en cuenta el desarrollo motriz, capacidades condicionales, físicas y coordinativas. Acogiendo a la población del municipio de Florida Valle y sus alrededores.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Categorías y Horarios</h3>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>EDAD</th>
+                <th>CATEGORÍA</th>
+                <th>DÍAS/HORARIOS</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>6 - 7 Años</td>
+                <td>SUB 6 VALLECAUCANOS, SUB 7 SEMILLAS</td>
+                <td>Miércoles y viernes<br>8:30 am – 10:00 am<br>3:00 pm – 5:00 pm</td>
+              </tr>
+              <tr>
+                <td>8 - 9 Años</td>
+                <td>SUB 8 BENJAMIN, SUB 9 TETEROS</td>
+                <td rowspan="3">Lunes, martes y viernes<br>7:00 pm – 8:30 pm</td>
+              </tr>
+              <tr>
+                <td>10 - 11 Años</td>
+                <td>SUB 10 MINI, SUB 11 BABY</td>
+              </tr>
+              <tr>
+                <td>12 - 13 Años</td>
+                <td>SUB 12 GORRION, SUB 13 PREINFANTIL</td>
+              </tr>
+              <tr>
+                <td>14 - 15 Años</td>
+                <td>SUB 14 INFANTIL, SUB 15 PREJUVENIL</td>
+                <td>Lunes, martes y viernes<br>7:00 pm – 8:30 pm</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
     </main>
     <Footer />
   </body>
 </html>
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -31,9 +92,36 @@ import Navbar from "../components/Navbar.astro";
     box-sizing: border-box;
   }
   main {
-    padding: 2rem 1rem;
+    padding: 8rem 1rem;
   }
   section {
     margin-bottom: 2rem;
+  }
+  ul {
+    list-style-type: disc;
+    margin-left: 2rem;
+  }
+  .table-container {
+    overflow-x: auto;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+  }
+  th, td {
+    padding: 1rem;
+    border: 1px solid #003366;
+    text-align: left;
+  }
+  th {
+    background-color: #003366;
+    color: white;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #e6f7ff;
   }
 </style>

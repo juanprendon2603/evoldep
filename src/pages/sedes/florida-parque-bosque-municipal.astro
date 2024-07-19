@@ -1,0 +1,93 @@
+---
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Florida - Parque Bosque Municipal - Club Evolución Deportiva</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <section class="hero">
+        <h2>Florida – Valle del Cauca</h2>
+        <p>Cancha principal del parque bosque municipal</p>
+      </section>
+      <section class="details">
+        <h3>¡CONÓCENOS!</h3>
+        <p>Nuestra sede se encuentra ubicada en la cancha principal del parque bosque municipal. El complejo cuenta con parqueadero, zona de cafetería, baños y canchas múltiples para que disfrutes de un verdadero espectáculo. Nuestros deportistas tienen acceso a todos los servicios que ofrece las canchas y el club deportivo.</p>
+        <h3>Categorías</h3>
+        <ul>
+          <li> Categoría Teteros (2018-2019)</li>
+          <li> Categoría Pony (2016-2017)</li>
+          <li> Categoría Baby (2014-2015)</li>
+          <li> Categoría Gorrión (2012-2013)</li>
+          <li> Categoría Infantil (2010-2011)</li>
+          <li> Categoría Prejuvenil (2008-2009)</li>
+          <li> Categoría Femenina Libre Formativa</li>
+        </ul>
+        <h3>¡CONTÁCTANOS!</h3>
+        <p>316 6234952</p>
+        <p>¡Llama y pregunta por tu clase de cortesía!</p>
+        <p>Dirección: Canchas Sintéticas Bernabeu, Cra. 5 NTE #52-26, B/ Calima</p>
+        <p>¡Haz click en el número telefónico y chatea con nosotros!</p>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+  }
+
+  main {
+    flex: 1;
+    padding: 2rem 1rem;
+  }
+
+  section {
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h2, h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  ul li {
+    font-size: 1.25rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 0.5rem;
+  }
+</style>

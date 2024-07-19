@@ -10,30 +10,249 @@ import Navbar from "../components/Navbar.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Actividades y Torneos - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
-
   </head>
   <body>
     <Navbar />
     <main>
-      <section>
+      <section class="timeline-section">
         <h2>Actividades y Torneos</h2>
-        <p>Descripción de las actividades y torneos...</p>
+        <div class="timeline">
+          <div class="circle-start"></div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <span class="date">2016</span>
+              <img src="/images/image.png" alt="2016 Image">
+              <p>Descripción del evento de 2016...</p>
+              <button class="read-more">Leer más</button>
+            </div>
+          </div>
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <span class="date">2017</span>
+              <img src="/images/image.png" alt="2017 Image">
+              <p>Descripción del evento de 2017...</p>
+              <button class="read-more">Leer más</button>
+            </div>
+          </div>
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <span class="date">2018</span>
+              <img src="/images/image.png" alt="2018 Image">
+              <p>Descripción del evento de 2018...</p>
+              <button class="read-more">Leer más</button>
+            </div>
+          </div>
+          <div class="circle-end"></div>
+        </div>
+      </section>
+      <section class="activities-section">
+        <h2>Actividades</h2>
+        <p>Nuestro club realiza diferentes actividades para obtener recursos económicos de ellas que le ayuden a solventar todos sus gastos anuales, puesto que nuestra institución no es patrocinada por ningún ente público o privado ni persona particular. Nuestra entidad obtiene sus beneficios económicos actualmente a través de su convenio interinstitucional con la caja de compensación familiar del cauca Comfacauca, y las diferentes actividades que realiza con sus beneficiarios deportistas, sus administrativos, su cuerpo técnico, los padres de familia y demás allegados a nuestros afiliados.</p>
+        <p>Realizamos actividades como: Paseos, bingos, venta de lechona, rifas, tómbolas, venta de alimentos entre otras, estas nos sirven antes que nada para comprar todo lo que concierne al club como implementación deportiva, papelería legal, pago de compromisos y afiliaciones entre otras, también efectuamos con estos ingresos talleres en los que tienen que ver con nuestros trabajadores, niños, niñas y adolescentes, tales como lo son intervenciones psicológicas, fiestas de cumpleaños, baby shower, salidas a cine, salidas pedagógicas, paseos, salidas deportivas, aniversarios, despedidas de fin de año entre otros que tienen como objeto abrir espacios que le permitan a los profesionales, beneficiarios y acompañantes, explorar, recrearse, ilustrarse, compartir, cooperar, y pasar un rato atractivo y agradable en compañía de sus compañeros y profesionales. A continuación, compartiremos algunas destacadas fotos de algunas actividades que realizamos durante los últimos años.</p>
+        
+        <div class="gallery">
+          <!-- Add 20 images here -->
+          <img src="/images/image.png" alt="Actividad 1">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <img src="/images/image.png" alt="Actividad 2">
+          <!-- Add more images as needed -->
+        </div>
       </section>
     </main>
     <Footer />
   </body>
 </html>
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box.
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+}
+
+main {
+  padding: 8rem 1rem;
+  flex: 1;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+.timeline-section h2,
+.activities-section h2 {
+  text-align: center;
+  color: #ff6600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  margin-bottom: 4rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #ff6600;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+.timeline-item {
+  padding: 20px 40px;
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateX(-100%);
+  animation: slide-in-left 0.5s forwards;
+}
+
+.timeline-item.right {
+  left: 48.9%;
+  transform: translateX(100%);
+  animation: slide-in-right 0.5s forwards;
+}
+
+.timeline-item.left {
+  left: -0.5%;
+}
+
+.timeline-item.left::before {
+  content: " ";
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline-item.right::before {
+  content: " ";
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  border-width: 15px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+
+.timeline-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content {
+  text-align: center;
+}
+
+.date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.read-more:hover {
+  background-color: #cc5200;
+  transform: scale(1.05);
+}
+
+.circle {
+  position: absolute;
+  background-color: #ff6600;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.circle.start {
+  left: 50%;
+  transform: translateX(-50%);
+  top: -10px; /* Adjust to position above the line */
+}
+
+.circle.end {
+  right: 0;
+  top: -10px; /* Adjust to position above the line */
+}
+
+.activities-section p {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.gallery img {
+  width: calc(25% - 1rem);
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+}
+
+@keyframes slide-in-left {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  main {
-    padding: 2rem 1rem;
+}
+
+@keyframes slide-in-right {
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
-  section {
-    margin-bottom: 2rem;
-  }
+}
+
 </style>

@@ -1,0 +1,104 @@
+---
+import { getNews, getNewsById } from "../../data/news"; // Importa las funciones necesarias
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+
+// Esta función se usa para obtener las rutas dinámicas que deben ser generadas
+export async function getStaticPaths() {
+  const newsItems = getNews(); // Obtener todas las noticias
+  return {
+    paths: newsItems.map(item => ({
+      params: { id: item.id } // Mapea cada noticia a su ruta correspondiente
+    })),
+    fallback: false // Configura si quieres que las rutas no generadas previamente devuelvan un 404
+  };
+}
+
+// Obtiene el parámetro de la ruta
+const { id } = Astro.params;
+const newsItem = getNewsById(id); // Obtiene la noticia por ID
+---
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{newsItem ? newsItem.title : 'Noticia no encontrada'} - Club Evolución Deportiva</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <section class="news-detail">
+        {newsItem ? (
+          <>
+            <img src={newsItem.image} alt={newsItem.title} class="news-image" />
+            <div class="news-text">
+              <h1>{newsItem.title}</h1>
+              <p>{newsItem.content}</p>
+            </div>
+          </>
+        ) : (
+          <div class="news-not-found">
+            <h1>Noticia no encontrada</h1>
+            <p>Lo sentimos, la noticia que buscas no está disponible.</p>
+          </div>
+        )}
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif; /* Asegúrate de que la fuente sea la correcta */
+  }
+
+  main {
+    padding: 8rem 1rem; /* Ajusta el padding si es necesario */
+  }
+
+  .news-detail {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    box-sizing: border-box; /* Asegúrate de que el box-sizing está configurado correctamente */
+  }
+
+  .news-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  .news-text {
+    padding: 1rem;
+  }
+
+  .news-text h1 {
+    margin: 0 0 1rem;
+    font-size: 2rem; /* Ajusta el tamaño de fuente si es necesario */
+  }
+
+  .news-text p {
+    margin: 0;
+    font-size: 1rem; /* Ajusta el tamaño de fuente si es necesario */
+  }
+
+  .news-not-found {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  /* Ajusta el footer si está subiendo */
+
+</style>
+

@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import { news } from "../data/news"; // Suponiendo que tienes un archivo de datos para las noticias
+
 ---
 
 <!DOCTYPE html>
@@ -10,7 +12,13 @@ import Navbar from "../components/Navbar.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Noticias y Destacados - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
-
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v20.0" nonce="WlmtbzQy"></script>
+    <!-- Instagram Embed -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+    <!-- TikTok SDK -->
+    <script async src="https://www.tiktok.com/embed.js"></script>
   </head>
   <body>
     <Navbar />
@@ -18,11 +26,54 @@ import Navbar from "../components/Navbar.astro";
       <section>
         <h2>Noticias y Destacados</h2>
         <p>Últimas noticias y destacados del club...</p>
+        
+        <!-- Social Media Widgets -->
+        <div class="widget-row">
+          <!-- Facebook Widget -->
+          <div class="widget-container">
+            <h3>Facebook</h3>
+            <div class="fb-page" data-href="https://www.facebook.com/evoldep" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+              <blockquote cite="https://www.facebook.com/evoldep" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/evoldep">Club Deportivo Evoldep</a>
+              </blockquote>
+            </div>
+          </div>
+
+          <!-- Instagram Embed -->
+          <div class="widget-container">
+            <h3>Instagram</h3>
+            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/evoldep/" data-instgrm-version="14">
+              <a href="https://www.instagram.com/evoldep/" target="_blank">Ver publicación en Instagram</a>
+            </blockquote>
+          </div>
+
+          <!-- TikTok Embed -->
+          <div class="widget-container">
+            <h3>TikTok</h3>
+            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@evoldep" data-video-id="1234567890123456789" style="max-width: 605px; min-width: 325px; width: 100%;"><section> <a target="_blank" title="@evoldep" href="https://www.tiktok.com/@evoldep">@evoldep</a> </section></blockquote>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>Noticias</h2>
+        <div class="news-container">
+          {news.map((item) => (
+            <div class="news-card">
+              <img src={item.image} alt={item.title} />
+              <div class="news-content">
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <a href={`/noticias/${item.id}`} class="btn">Ver Más</a>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </main>
     <Footer />
   </body>
 </html>
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -31,9 +82,62 @@ import Navbar from "../components/Navbar.astro";
     box-sizing: border-box;
   }
   main {
-    padding: 2rem 1rem.
+    padding: 8rem 1rem;
   }
   section {
-    margin-bottom: 2rem.
+    margin-bottom: 2rem;
+  }
+  .widget-row {
+    display: flex;
+    justify-content: center;
+    gap: 1rem; /* Space between widgets */
+    flex-wrap: wrap; /* Ensure widgets wrap on smaller screens */
+  }
+  .widget-container {
+    flex: 1;
+    max-width: 500px; /* Same width for uniformity */
+    margin: 0 1rem;
+  }
+  .widget-container h3 {
+    margin-bottom: 1rem;
+  }
+  .fb-page,
+  .instagram-media,
+  .tiktok-embed {
+    width: 100%;
+  }
+  .news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .news-card {
+    flex: 1;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .news-card img {
+    width: 100%;
+    height: auto;
+  }
+  .news-content {
+    padding: 1rem;
+  }
+  .news-content h3 {
+    margin: 0 0 0.5rem;
+  }
+  .news-content p {
+    margin: 0 0 1rem;
+  }
+  .btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
   }
 </style>

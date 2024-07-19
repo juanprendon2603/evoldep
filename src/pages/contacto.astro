@@ -10,30 +10,109 @@ import Navbar from "../components/Navbar.astro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctenos - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
-
   </head>
   <body>
     <Navbar />
     <main>
-      <section>
+      <section class="hero">
         <h2>Contáctenos</h2>
         <p>Contacto del club...</p>
+      </section>
+      <section class="info">
+        <h2>UBICACIÓN E INSTALACIONES DE NUESTRO CLUB</h2>
+        <p>Nuestra institución realiza sus prácticas en diferentes canchas ubicadas en Florida, Valle del Cauca.</p>
+      </section>
+      <section class="locations-section">
+        <div class="location-card">
+          <h3>Florida – Valle del Cauca</h3>
+          <p>Cancha principal del parque bosque municipal</p>
+          <p>Calle 6 con carrera 5 esquina</p>
+          <a href="/sedes/florida-parque-bosque-municipal">Ver más</a>
+        </div>
+        <div class="location-card">
+          <h3>Florida – Valle del Cauca</h3>
+          <p>Cancha barrio la cabaña</p>
+          <p>Calle 4 con carrera 13 esquina</p>
+          <a href="/sedes/florida-barrio-la-cabana">Ver más</a>
+        </div>
       </section>
     </main>
     <Footer />
   </body>
 </html>
+
 <style>
-  body {
-    font-family: Arial, sans-serif;
+  body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box.
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
   }
+
   main {
-    padding: 2rem 1rem.
+    flex: 1;
+    padding: 2rem 1rem;
   }
+
   section {
-    margin-bottom: 2rem.
+    margin-bottom: 2rem;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h2, h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .locations-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .location-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 300px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .location-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .location-card a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #ff6600;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .location-card a:hover {
+    background-color: #cc5200;
+    transform: translateY(-2px);
   }
 </style>
