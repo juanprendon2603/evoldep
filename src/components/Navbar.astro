@@ -3,29 +3,59 @@ const currentPath = Astro.url.pathname;
 const isActive = (path: string) => currentPath === path ? 'active' : '';
 ---
 
-<div class="top-bar">
-  <div class="info">
-    <div><img src="/images/phone.png" alt="Phone">304 373 5676</div>
-    <div><img src="/images/email.png" alt="Email">info@evoldep.com</div>
-    <div><img src="/images/email.png" alt="Email">evoldep@gmail.com</div>
-    <div><img src="/images/location.png" alt="Location">Florida, Valle del Cauca, Colombia</div>
-    <div>NIT: 900874043-1</div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Evolución Deportiva</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Incluye aquí el CSS */
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <div class="info">
+      <div><i class="fa fa-phone"></i> 304 373 5676</div>
+      <div><i class="fa fa-envelope"></i> evoldep@gmail.com</div>
+      <div><i class="fa-solid fa-location-dot"></i> Florida, Valle del Cauca, Colombia</div>
+      <div><i class="fa-solid fa-file-lines"></i> NIT: 900874043-1</div>
+    </div>
+    <div class="social-icons">
+      <a href="https://facebook.com/evoldep" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+      <a href="https://x.com/evoldep" target="_blank"><img src="/images/x.png" alt="Twitter"></a>
+      <a href="https://instagram.com/evoldep" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+      <a href="https://tiktok.com/@tevoldep" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
+    </div>
   </div>
-  <div class="social-icons">
-    <a href="https://facebook.com/tu_usuario" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
-    <a href="https://twitter.com/tu_usuario" target="_blank"><img src="/images/twitter.png" alt="Twitter"></a>
-    <a href="https://instagram.com/tu_usuario" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
-    <a href="https://tiktok.com/@tu_usuario" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
-  </div>
-</div>
-<nav class="navbar">
-  <div class="container">
-   
-    
-    <a href="/" class="logo-link">
-      <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo">
-      <span>Club Evolución Deportiva</span>
-    </a>
+
+  <nav class="navbar">
+    <div class="menu-toggle">
+      <i class="fa fa-bars"></i>
+    </div>
+
+    <div class="container">
+      <a href="/" class="logo-link">
+        <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo">
+        <span>Club Evolución Deportiva</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/inicio" class={isActive('/inicio')}>Inicio</a></li>
+        <li><a href="/nosotros" class={isActive('/nosotros')}>Nosotros</a></li>
+        <li><a href="/servicios" class={isActive('/servicios')}>Servicios</a></li>
+        <li><a href="/actividades" class={isActive('/actividades')}>Actividades y Torneos</a></li>
+        <li><a href="/noticias" class={isActive('/noticias')}>Noticias y Destacados</a></li>
+        <li><a href="/contacto" class={isActive('/contacto')}>Contáctenos</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Menú Lateral -->
+  <div class="sidebar-menu">
+    <div class="menu-toggle-close">
+      <i class="fa fa-times"></i>
+    </div>
     <ul class="nav-links">
       <li><a href="/inicio" class={isActive('/inicio')}>Inicio</a></li>
       <li><a href="/nosotros" class={isActive('/nosotros')}>Nosotros</a></li>
@@ -35,10 +65,36 @@ const isActive = (path: string) => currentPath === path ? 'active' : '';
       <li><a href="/contacto" class={isActive('/contacto')}>Contáctenos</a></li>
     </ul>
   </div>
-</nav>
 
-<script>
-  window.addEventListener('scroll', function() {
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.querySelector('.menu-toggle') as HTMLElement | null;
+      const sidebarMenu = document.querySelector('.sidebar-menu') as HTMLElement | null;
+      const body = document.body;
+  
+      if (menuToggle && sidebarMenu) {
+        menuToggle.addEventListener('click', function() {
+          sidebarMenu.classList.toggle('open');
+          body.classList.toggle('menu-open');
+        });
+  
+        // Cierra el menú cuando se hace clic fuera del menú
+        document.addEventListener('click', function(event) {
+          // Verifica si el evento target es un nodo y no está contenido en el menú o el botón de menú
+          const target = event.target as Node | null;
+          if (sidebarMenu.classList.contains('open') &&
+              target instanceof Node &&
+              !sidebarMenu.contains(target) &&
+              !menuToggle.contains(target)) {
+            sidebarMenu.classList.remove('open');
+            body.classList.remove('menu-open');
+          }
+        });
+      }
+    });
+
+
+    window.addEventListener('scroll', function() {
     const topBar = document.querySelector('.top-bar') as HTMLElement;
     const navbar = document.querySelector('.navbar') as HTMLElement;
     if (topBar && navbar) {
@@ -51,12 +107,15 @@ const isActive = (path: string) => currentPath === path ? 'active' : '';
       }
     }
   });
-</script>
+  </script>
+</body>
+</html>
 
 <style>
   .top-bar {
     background-color: #002244;
-    color: #fff;
+    color: rgba(255, 255, 255, 0.6); /* Ajusta el valor de opacidad (0.0 a 1.0) según lo necesites */
+
     padding: 0.5rem 1rem;
     display: flex;
     justify-content: center;
@@ -80,6 +139,8 @@ const isActive = (path: string) => currentPath === path ? 'active' : '';
   .top-bar .social-icons {
     display: flex;
     gap: 1rem;
+    margin-left: 1rem; /* Ajusta el valor según lo necesites */
+
   }
   .top-bar .social-icons img {
     width: 20px;
@@ -121,7 +182,7 @@ const isActive = (path: string) => currentPath === path ? 'active' : '';
     list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin: 0;
+    margin-right: 1rem; /* Ajusta el valor según lo necesites */
     padding: 0;
   }
   .nav-links a {
@@ -148,4 +209,65 @@ const isActive = (path: string) => currentPath === path ? 'active' : '';
   main {
     padding-top: 100px; /* Altura combinada de la top-bar y el navbar */
   }
+
+  /* Estilos generales */
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1200; /* Asegúrate de que el botón esté sobre el menú lateral */
+}
+
+@media (max-width: 768px) {
+  .top-bar, .navbar {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #003366;
+    color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    z-index: 1100;
+  }
+
+  .sidebar-menu.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-menu .nav-links {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+  }
+
+  .sidebar-menu .nav-links a {
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+  }
+}
+
+/* Estilos opcionales para la transición */
+body.menu-open {
+  overflow: hidden; /* Previene el desplazamiento del contenido en segundo plano */
+}
+
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+
+

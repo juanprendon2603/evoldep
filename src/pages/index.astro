@@ -1,14 +1,12 @@
----
-import Navbar from "../components/Navbar.astro";
-import Footer from "../components/Footer.astro";
----
 <!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Página Principal - Club Evolución Deportiva</title>
+    <title>Index - Club Evolución Deportiva</title>
     <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
   <body>
     <div class="hero">
@@ -17,14 +15,14 @@ import Footer from "../components/Footer.astro";
       <p>Forjando seres íntegros para la evolución de una sociedad.</p>
       <div class="container">
         <div class="buttons">
-          <a href="/inicio" class="button">Visita nuestra página web</a>
-          <a href="mailto:tu-email@ejemplo.com" class="button">Escríbenos un email</a>
-          <a href="https://wa.me/1234567890" target="_blank" class="button">Hablemos por WhatsApp</a>
+          <a href="/inicio" class="button"><i class="fas fa-globe"></i> Visita nuestra página web</a>
+          <a href="mailto:tu-email@ejemplo.com" class="button"><i class="fas fa-envelope"></i> Escríbenos un email</a>
+          <a href="https://wa.me/+573043735676" target="_blank" class="button"><i class="fas fa-comments"></i> Hablemos por WhatsApp</a>
         </div>
         <div class="social-icons">
-          <a href="https://www.facebook.com/tu-pagina" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
-          <a href="https://www.tiktok.com/tu-pagina" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
-          <a href="https://www.instagram.com/tu-pagina" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+          <a href="https://www.facebook.com/evoldep" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+          <a href="https://www.tiktok.com/@evoldep" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
+          <a href="https://www.instagram.com/evoldep" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
         </div>
       </div>
     </div>
@@ -87,6 +85,10 @@ import Footer from "../components/Footer.astro";
   }
 
   .buttons .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* Espacio entre el ícono y el texto */
     margin: 0.5rem;
     padding: 1rem 2rem;
     font-size: 1.25rem;
@@ -97,6 +99,11 @@ import Footer from "../components/Footer.astro";
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
     transform: rotate(-5deg);
+  }
+
+  .buttons .button i {
+    font-size: 1.5rem; /* Tamaño del ícono */
+    color: white;
   }
 
   .buttons .button:hover {
@@ -134,7 +141,6 @@ import Footer from "../components/Footer.astro";
   /* Efecto de movimiento al pasar el mouse sobre el logo */
   .hero .logo:hover {
     transform: scale(1.2); /* Aumenta el tamaño en un 50% */
-
   }
 
   /* Estilos para hacer responsive */
