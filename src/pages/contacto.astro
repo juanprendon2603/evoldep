@@ -3,37 +3,96 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contáctenos - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <Navbar />
     <main>
-      <section class="hero">
-        <h2>Contáctenos</h2>
-        <p>Contacto del club...</p>
-      </section>
       <section class="info">
-        <h2>UBICACIÓN E INSTALACIONES DE NUESTRO CLUB</h2>
-        <p>Nuestra institución realiza sus prácticas en diferentes canchas ubicadas en Florida, Valle del Cauca.</p>
+        <h2>Sedes</h2>
       </section>
+
       <section class="locations-section">
         <div class="location-card">
-          <h3>Florida – Valle del Cauca</h3>
-          <p>Cancha principal del parque bosque municipal</p>
-          <p>Calle 6 con carrera 5 esquina</p>
-          <a href="/sedes/florida-parque-bosque-municipal">Ver más</a>
+          <div class="location-icon">
+            <img src="/images/map.png" alt="Map" />
+          </div>
+          <h3>Cancha parque bosque municipal</h3>
+          <a
+            href="/sedes/florida-parque-bosque-municipal"
+            class="location-button">Ver ubicación</a
+          >
         </div>
         <div class="location-card">
-          <h3>Florida – Valle del Cauca</h3>
-          <p>Cancha barrio la cabaña</p>
-          <p>Calle 4 con carrera 13 esquina</p>
-          <a href="/sedes/florida-barrio-la-cabana">Ver más</a>
+          <div class="location-icon">
+            <img src="/images/map.png" alt="Map" />
+          </div>
+          <h3>Cancha la cabaña</h3>
+          <a href="/sedes/florida-barrio-la-cabana" class="location-button"
+            >Ver ubicación</a
+          >
+        </div>
+      </section>
+
+      <!-- Formulario de contacto -->
+      <section class="contact-section">
+        <form class="contact-form">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+          <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required />
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono" required />
+          </div>
+          <div class="form-group">
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" required></textarea>
+          </div>
+          <button type="submit">Enviar</button>
+        </form>
+
+        <div class="contact-info">
+          <p><strong>Teléfonos:</strong></p>
+          <p><i class="fa fa-phone"></i> (2) 263 8138</p>
+          <p><i class="fa fa-mobile"></i> (+57) 304 373 5676</p>
+          <p><strong>Dirección:</strong></p>
+          <p>
+            <i class="fa fa-map-marker"></i> Calle 16 con Carrera 16ª, Barrio La
+            Casilda, Florida, Valle del Cauca, Colombia
+          </p>
+          <p><strong>Correos Electrónicos:</strong></p>
+          <p><i class="fa fa-envelope"></i> info@evoldep.com</p>
+          <p><i class="fa fa-envelope"></i> evoldep@gmail.com</p>
+
+          <div class="social-icons">
+            <a href="https://facebook.com/evoldep" target="_blank"
+              ><img src="/images/facebook.png" alt="Facebook" /></a
+            >
+            <a href="https://x.com/evoldep" target="_blank"
+              ><img src="/images/x.png" alt="Twitter" /></a
+            >
+            <a href="https://instagram.com/evoldep" target="_blank"
+              ><img src="/images/instagram.png" alt="Instagram" /></a
+            >
+            <a href="https://tiktok.com/@tevoldep" target="_blank"
+              ><img src="/images/tik-tok.png" alt="TikTok" /></a
+            >
+          </div>
         </div>
       </section>
     </main>
@@ -42,77 +101,174 @@ import Navbar from "../components/Navbar.astro";
 </html>
 
 <style>
-  body, html {
-    height: 100%;
-    margin: 0;
+  body {
     font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
   }
 
   main {
-    flex: 1;
-    padding: 2rem 1rem;
+    padding: 6rem 1rem 2rem 1rem; /* Ajustar el padding-top para dar espacio al navbar */
   }
 
-  section {
-    margin-bottom: 2rem;
-    color: white;
+  .info h2 {
     text-align: center;
-    padding: 2rem;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  h2, h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-  }
-
-  p {
-    font-size: 1.25rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   }
 
   .locations-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 2rem;
+    justify-content: center;
   }
 
   .location-card {
-    background: rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 300px;
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+    padding: 2rem;
     border-radius: 10px;
-    padding: 1.5rem;
-    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   .location-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to bottom, #66ccff 0%, #003366 100%);
   }
 
-  .location-card a {
+  .location-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .location-icon img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .location-card h3 {
+    font-size: 1.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .location-button {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75rem 1.5rem;
+    padding: 0.5rem 1rem;
     background-color: #ff6600;
     color: white;
-    border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
   }
 
-  .location-card a:hover {
+  .location-button:hover {
     background-color: #cc5200;
-    transform: translateY(-2px);
+  }
+
+  .contact-section {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+
+  .contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    flex: 1;
+  }
+
+  .contact-info {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    flex: 1;
+    text-align: center;
+  }
+
+  .contact-info p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .contact-form button {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .contact-form button:hover {
+    background-color: #cc5200;
+  }
+
+  .social-icons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-icons a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+  }
+
+  .social-icons img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
   }
 </style>

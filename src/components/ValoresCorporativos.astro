@@ -1,0 +1,135 @@
+---
+
+---
+
+<section class="valores-container">
+  <h2>Valores Corporativos</h2>
+  <div class="strengths">
+    <div class="strength">
+      <div class="icon-circle">
+        <i class="fas fa-trophy"></i>
+      </div>
+      <h3>Liderazgo</h3>
+    </div>
+    <div class="strength">
+      <div class="icon-circle">
+        <i class="fas fa-handshake"></i>
+      </div>
+      <h3>Compromiso</h3>
+    </div>
+    <div class="strength">
+      <div class="icon-circle">
+        <i class="fas fa-business-time"></i>
+      </div>
+      <h3>Responsabilidad</h3>
+    </div>
+    <div class="strength">
+      <div class="icon-circle">
+        <i class="fas fa-calendar-check"></i>
+      </div>
+      <h3>Seguimiento</h3>
+    </div>
+    <div class="strength">
+      <div class="icon-circle">
+        <i class="fas fa-award"></i>
+      </div>
+      <h3>Formación</h3>
+    </div>
+    <div class="strength">
+      <a href="/valores">
+        <div class="icon-circle">
+          <i class="fas fa-info-circle"></i>
+        </div>
+        <h3>Ver todos</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .valores-container {
+    background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+    padding: 20px;
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .valores-container h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+
+  .strengths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .strength {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 150px;
+  }
+
+  .icon-circle {
+    background-color: #ff6600;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  .icon-circle:hover {
+    transform: scale(1.1);
+  }
+
+  .icon-circle i {
+    font-size: 2em;
+    color: white;
+  }
+
+  .strength a {
+    text-decoration: none; /* Quitar subrayado */
+    color: inherit; /* Usar el mismo color del texto padre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .strength a h3 {
+    margin: 10px 0 0; /* Ajustar el margen superior para alinear el texto */
+  }
+
+  .hero {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+  }
+
+  .hero .logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease; /* Transición para suavizar el efecto */
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  }
+</style>

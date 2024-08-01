@@ -1,11 +1,13 @@
 ---
+import Facebook from "../components/FacebookEmbed.astro";
 import Footer from "../components/Footer.astro";
+import Instagram from "../components/InstagramEmbed.astro";
 import Navbar from "../components/Navbar.astro";
+import TikTok from "../components/TiktokEmbed.astro";
 import { news } from "../data/news"; // Suponiendo que tienes un archivo de datos para las noticias
-
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -13,131 +15,183 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
     <title>Noticias y Destacados - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
     <!-- Facebook SDK -->
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v20.0" nonce="WlmtbzQy"></script>
-    <!-- Instagram Embed -->
-    <script async src="https://www.instagram.com/embed.js"></script>
-    <!-- TikTok SDK -->
-    <script async src="https://www.tiktok.com/embed.js"></script>
   </head>
+  <div id="fb-root"></div>
+  <script
+    async
+    defer
+    crossorigin="anonymous"
+    src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v20.0"
+    nonce="WlmtbzQy"></script>
+  <!-- Instagram Embed -->
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <!-- TikTok SDK -->
+  <script async src="https://www.tiktok.com/embed.js"></script>
+
   <body>
     <Navbar />
     <main>
       <section>
         <h2>Noticias y Destacados</h2>
         <p>Últimas noticias y destacados del club...</p>
-        
+
         <!-- Social Media Widgets -->
         <div class="widget-row">
-          <!-- Facebook Widget -->
-          <div class="widget-container">
-            <h3>Facebook</h3>
-            <div class="fb-page" data-href="https://www.facebook.com/evoldep" data-tabs="timeline" data-width="500" data-height="" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-              <blockquote cite="https://www.facebook.com/evoldep" class="fb-xfbml-parse-ignore">
-                <a href="https://www.facebook.com/evoldep">Club Deportivo Evoldep</a>
-              </blockquote>
-            </div>
-          </div>
-
-          <!-- Instagram Embed -->
-          <div class="widget-container">
-            <h3>Instagram</h3>
-            <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/evoldep/" data-instgrm-version="14">
-              <a href="https://www.instagram.com/evoldep/" target="_blank">Ver publicación en Instagram</a>
-            </blockquote>
-          </div>
-
-          <!-- TikTok Embed -->
-          <div class="widget-container">
-            <h3>TikTok</h3>
-            <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@evoldep" data-video-id="1234567890123456789" style="max-width: 605px; min-width: 325px; width: 100%;"><section> <a target="_blank" title="@evoldep" href="https://www.tiktok.com/@evoldep">@evoldep</a> </section></blockquote>
-          </div>
+          <Facebook />
+          <Instagram />
+          <TikTok />
         </div>
-      </section>
-      <section>
-        <h2>Noticias</h2>
-        <div class="news-container">
-          {news.map((item) => (
-            <div class="news-card">
-              <img src={item.image} alt={item.title} />
+
+        <section>
+          <h2>Noticias</h2>
+          <div class="news-container">
+            <!-- Noticia grande -->
+            <div class="news-large">
+              <img src={news[0].image} alt={news[0].title} />
               <div class="news-content">
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-                <a href={`/noticias/${item.id}`} class="btn">Ver Más</a>
+                <h3>{news[0].title}</h3>
+                <p>{news[0].description}</p>
+                <a href={`/noticias/${news[0].id}`} class="btn">Ver Más</a>
               </div>
             </div>
-          ))}
-        </div>
+
+            <!-- Dos noticias en columna -->
+            <div class="news-column">
+              {
+                news.slice(1, 3).map((item) => (
+                  <div class="news-small">
+                    <img src={item.image} alt={item.title} />
+                    <div class="news-content">
+                      <h3>{item.title}</h3>
+                      <p>{item.description}</p>
+                      <a href={`/noticias/${item.id}`} class="btn">
+                        Ver Más
+                      </a>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Cuadrícula de noticias -->
+          <div class="news-grid">
+            {
+              news.slice(3).map((item) => (
+                <div class="news-card">
+                  <img src={item.image} alt={item.title} />
+                  <div class="news-content">
+                    <h3>{item.title}</h3>
+                    <p>{item.description}</p>
+                    <a href={`/noticias/${item.id}`} class="btn">
+                      Ver Más
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </section>
       </section>
     </main>
     <Footer />
-  </body>
-</html>
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  main {
-    padding: 8rem 1rem;
-  }
-  section {
-    margin-bottom: 2rem;
-  }
-  .widget-row {
-    display: flex;
-    justify-content: center;
-    gap: 1rem; /* Space between widgets */
-    flex-wrap: wrap; /* Ensure widgets wrap on smaller screens */
-  }
-  .widget-container {
-    flex: 1;
-    max-width: 500px; /* Same width for uniformity */
-    margin: 0 1rem;
-  }
-  .widget-container h3 {
-    margin-bottom: 1rem;
-  }
-  .fb-page,
-  .instagram-media,
-  .tiktok-embed {
-    width: 100%;
-  }
-  .news-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .news-card {
-    flex: 1;
-    max-width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  .news-card img {
-    width: 100%;
-    height: auto;
-  }
-  .news-content {
-    padding: 1rem;
-  }
-  .news-content h3 {
-    margin: 0 0 0.5rem;
-  }
-  .news-content p {
-    margin: 0 0 1rem;
-  }
-  .btn {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-  }
-</style>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+      }
+      main {
+        padding: 8rem 1rem;
+      }
+      section {
+        margin-bottom: 2rem;
+      }
+      .widget-row {
+        display: flex;
+        justify-content: space-around;
+        gap: 1rem; /* Space between widgets */
+        flex-wrap: wrap; /* Ensure widgets wrap on smaller screens */
+      }
+      .widget-container {
+        flex: 1;
+        max-width: 500px; /* Same width for uniformity */
+        margin: 0 1rem;
+      }
+      .widget-container h3 {
+        margin-bottom: 1rem;
+      }
+      .fb-page,
+      .instagram-media,
+      .tiktok-embed {
+        width: 100%;
+      }
+      .news-container {
+        display: flex;
+        gap: 1rem;
+      }
+      .news-large {
+        flex: 2;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .news-column {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .news-small,
+      .news-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+      }
+      .news-large {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #f9f9f9;
+      }
+      .news-large img,
+      .news-small img,
+      .news-card img {
+        width: 100%;
+        height: auto;
+      }
+      .news-content {
+        padding: 1rem;
+      }
+      .news-content h3 {
+        margin: 0 0 0.5rem;
+      }
+      .news-content p {
+        margin: 0 0 1rem;
+      }
+      .btn {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+      }
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+    </style>
+  </body>
+
+
+</html>

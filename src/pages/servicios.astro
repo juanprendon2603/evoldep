@@ -3,46 +3,87 @@ import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Servicios - Club Evolución Deportiva</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
   </head>
   <body>
     <Navbar />
     <main>
+      <div class="container">
+        <div class="left-column">
+          <div class="section-container">
+            <section class="section">
+              <h2>Servicios</h2>
+              <p>
+                El club ofrece entrenamientos deportivos en la disciplina
+                deportiva fútbol, para niños, niñas y adolescentes que
+                comprendan las edades entre los 4 y 17 años. Para ser un
+                deportista evolutivo se debe tener en cuenta los siguientes
+                servicios, requisitos y horarios por categorías. Los horarios
+                mencionados también comprenderán atención al público general.
+              </p>
+            </section>
+          </div>
+          <div class="section-container">
+            <section class="section">
+              <h2>Requisitos</h2>
+              <ul class="text-list">
+                <li><i class="fas fa-camera"></i> 2 fotos 3×4 fondo blanco</li>
+                <li>
+                  <i class="fas fa-file-signature"></i> Registro civil de nacimiento
+                  (original)
+                </li>
+                <li>
+                  <i class="fas fa-id-card"></i> Fotocopia tarjeta de identidad (Mayores
+                  de 7 años)
+                </li>
+                <li>
+                  <i class="fas fa-stethoscope"></i> Fotocopia carnet de salud o
+                  afiliación a la misma
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+        <div class="right-column">
+          <div class="section-bandera">
+            <section class="section-p">
+              <p>
+                Plan pedagógico para la práctica correcta de la disciplina
+                deportiva fútbol y otras actividades deportivas en el fomento
+                recreativo, formativo y competitivo.
+              </p>
+            </section>
+            <section class="section-p">
+              <p>
+                Programas deportivos distribuidos por categorías para su
+                respectiva actividad y entrenamiento de fútbol en los días
+                correspondientes.
+              </p>
+            </section>
+            <section class="section-p">
+              <p>
+                Nos distribuimos en las siguientes categorías que corresponden a
+                la edad del deportista, teniendo en cuenta el desarrollo motriz,
+                capacidades condicionales, físicas y coordinativas. Acogiendo a
+                la población del municipio de Florida Valle y sus alrededores.
+              </p>
+            </section>
+          </div>
+        </div>
+      </div>
       <section>
-        <h2>Servicios</h2>
-        <p>
-          El club ofrece entrenamientos deportivos en la disciplina deportiva fútbol, para niños, niñas y adolescentes que comprendan las edades entre los 4 y 17 años. Para ser un deportista evolutivo se debe tener en cuenta los siguientes servicios, requisitos y horarios por categorías. Los horarios mencionados también comprenderán atención al público general.
-        </p>
-      </section>
-
-      <section>
-        <h3>Requisitos</h3>
-        <ul>
-          <li>2 fotos 3×4 fondo blanco</li>
-          <li>Registro civil de nacimiento (original)</li>
-          <li>Fotocopia tarjeta de identidad (Mayores de 7 años)</li>
-          <li>Fotocopia carnet de salud o afiliación a la misma</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Programas y Planes</h3>
-        <ul>
-          <li>Plan pedagógico para la práctica correcta de la disciplina deportiva fútbol y otras actividades deportivas en el fomento recreativo, formativo y competitivo.</li>
-          <li>Programas deportivos distribuidos por categorías para su respectiva actividad y entrenamiento de fútbol en los días correspondientes.</li>
-          <li>Nos distribuimos en las siguientes categorías que corresponden a la edad del deportista, teniendo en cuenta el desarrollo motriz, capacidades condicionales, físicas y coordinativas. Acogiendo a la población del municipio de Florida Valle y sus alrededores.</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Categorías y Horarios</h3>
-        <div class="table-container">
+        <h2>Categorías y Horarios</h2>
+        <div class="table-wrapper">
           <table>
             <thead>
               <tr>
@@ -55,12 +96,17 @@ import Navbar from "../components/Navbar.astro";
               <tr>
                 <td>6 - 7 Años</td>
                 <td>SUB 6 VALLECAUCANOS, SUB 7 SEMILLAS</td>
-                <td>Miércoles y viernes<br>8:30 am – 10:00 am<br>3:00 pm – 5:00 pm</td>
+                <td
+                  >Miércoles y viernes<br />8:30 am – 10:00 am<br />3:00 pm –
+                  5:00 pm</td
+                >
               </tr>
               <tr>
                 <td>8 - 9 Años</td>
                 <td>SUB 8 BENJAMIN, SUB 9 TETEROS</td>
-                <td rowspan="3">Lunes, martes y viernes<br>7:00 pm – 8:30 pm</td>
+                <td rowspan="3"
+                  >Lunes, martes y viernes<br />7:00 pm – 8:30 pm</td
+                >
               </tr>
               <tr>
                 <td>10 - 11 Años</td>
@@ -73,7 +119,7 @@ import Navbar from "../components/Navbar.astro";
               <tr>
                 <td>14 - 15 Años</td>
                 <td>SUB 14 INFANTIL, SUB 15 PREJUVENIL</td>
-                <td>Lunes, martes y viernes<br>7:00 pm – 8:30 pm</td>
+                <td>Lunes, martes y viernes<br />7:00 pm – 8:30 pm</td>
               </tr>
             </tbody>
           </table>
@@ -90,26 +136,52 @@ import Navbar from "../components/Navbar.astro";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #ffffff;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
   }
   main {
     padding: 8rem 1rem;
   }
   section {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
   ul {
-    list-style-type: disc;
-    margin-left: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
-  .table-container {
-    overflow-x: auto;
+  .text-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  .text-list i {
+    margin-right: 0.5rem;
+    color: #ff6600;
+  }
+
+  h2 {
+    color: #ff6600;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  p {
+    text-align: justify;
+  }
+
+  .table-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 1rem;
   }
   table {
-    width: 100%;
+    width: 80%;
     border-collapse: collapse;
-    margin-bottom: 2rem;
   }
-  th, td {
+  th,
+  td {
     padding: 1rem;
     border: 1px solid #003366;
     text-align: left;
@@ -123,5 +195,56 @@ import Navbar from "../components/Navbar.astro";
   }
   tbody tr:nth-child(even) {
     background-color: #e6f7ff;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 1200px; /* Ajusta el ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+  }
+
+  .left-column,
+  .right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .left-column {
+    margin-right: 1rem; /* Espacio entre las columnas */
+  }
+
+  .right-column {
+    margin-left: 1rem; /* Espacio entre las columnas */
+  }
+
+  .section-container,
+  .section-bandera {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-p {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .section-bandera {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%; /* Asegura que la columna derecha tenga la misma altura */
+  }
+
+  /* Igualar alturas de columnas */
+  .container {
+    align-items: stretch;
   }
 </style>

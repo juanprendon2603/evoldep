@@ -1,0 +1,170 @@
+---
+
+---
+
+<carousel>
+  <div class="carousel-container">
+    <h2 class="carousel-title">Staff</h2>
+    <div class="card-container">
+      <div class="card active">
+        <img src="/images/image.png" alt="Staff Member 1" />
+        <div class="card-content">
+          <h3>Nombre del Staff 1</h3>
+          <p>Descripción corta del miembro del staff deportivo.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/image.png" alt="Staff Member 2" />
+        <div class="card-content">
+          <h3>Nombre del Staff 2</h3>
+          <p>Descripción corta del miembro del staff deportivo.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/images/image.png" alt="Staff Member 3" />
+        <div class="card-content">
+          <h3>Nombre del Staff 3</h3>
+          <p>Descripción corta del miembro del staff deportivo.</p>
+        </div>
+      </div>
+    </div>
+    <button class="nav-btn prev">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+      </svg>
+    </button>
+    <button class="nav-btn next">
+      <svg width="24" height="24" viewBox="0 0 24 24">
+        <path
+          fill="currentColor"
+          d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"></path>
+      </svg>
+    </button>
+  </div>
+</carousel>
+
+<style>
+  .carousel-container {
+    text-align: center;
+    position: relative;
+  }
+
+  .carousel-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .card-container {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+  }
+
+  .card {
+    display: none;
+    max-width: 60%;
+    margin: 0 15px;
+    transition:
+      transform 0.5s ease,
+      opacity 0.5s ease,
+      box-shadow 0.5s ease;
+    opacity: 0;
+    transform: scale(0.8);
+  }
+
+  .card img {
+    width: 80%;
+    transition: transform 0.5s ease;
+  }
+
+  .card.active img {
+    transform: scale(1.05);
+  }
+
+  .card.active {
+    display: block;
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-content {
+    transition: color 0.5s ease;
+  }
+
+  .card.active .card-content {
+    color: #333;
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  .nav-btn.prev {
+    left: 200px;
+  }
+
+  .nav-btn.next {
+    right: 200px;
+  }
+
+  .nav-btn:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  .nav-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".card");
+    const prevButton = document.querySelector(".nav-btn.prev");
+    const nextButton = document.querySelector(".nav-btn.next");
+    let currentIndex = 0;
+
+    function updateCards() {
+      cards.forEach((card, index) => {
+        card.classList.remove("active");
+        if (index === currentIndex) {
+          card.classList.add("active");
+        }
+      });
+    }
+
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCards();
+      });
+    }
+
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCards();
+      });
+    }
+
+    updateCards();
+  });
+</script>

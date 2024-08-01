@@ -1,9 +1,45 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+
+interface Photo {
+  src: string;
+  title: string;
+}
+
+const photos: Photo[] = [
+  { src: "/images/image.png", title: "Foto 1" },
+  { src: "/images/image.png", title: "Foto 2" },
+  { src: "/images/image.png", title: "Foto 3" },
+  { src: "/images/image.png", title: "Foto 4" },
+  { src: "/images/image.png", title: "Foto 5" },
+  { src: "/images/image.png", title: "Foto 6" },
+  { src: "/images/image.png", title: "Foto 7" },
+  { src: "/images/image.png", title: "Foto 8" },
+  { src: "/images/image.png", title: "Foto 9" },
+  { src: "/images/image.png", title: "Foto 10" },
+  { src: "/images/photo11.jpg", title: "Foto 11" },
+  { src: "/images/photo12.jpg", title: "Foto 12" },
+  { src: "/images/photo13.jpg", title: "Foto 13" },
+  { src: "/images/photo14.jpg", title: "Foto 14" },
+  { src: "/images/photo15.jpg", title: "Foto 15" },
+  { src: "/images/photo16.jpg", title: "Foto 16" },
+  { src: "/images/photo17.jpg", title: "Foto 17" },
+  { src: "/images/photo18.jpg", title: "Foto 18" },
+  { src: "/images/photo19.jpg", title: "Foto 19" },
+  { src: "/images/photo20.jpg", title: "Foto 20" },
+  { src: "/images/photo21.jpg", title: "Foto 21" },
+  { src: "/images/photo22.jpg", title: "Foto 22" },
+  { src: "/images/photo23.jpg", title: "Foto 23" },
+  { src: "/images/photo24.jpg", title: "Foto 24" },
+  { src: "/images/photo25.jpg", title: "Foto 25" },
+  { src: "/images/photo26.jpg", title: "Foto 26" },
+  { src: "/images/photo27.jpg", title: "Foto 27" },
+  { src: "/images/photo28.jpg", title: "Foto 28" },
+];
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
@@ -21,238 +57,511 @@ import Navbar from "../components/Navbar.astro";
           <div class="timeline-item left">
             <div class="timeline-content">
               <span class="date">2016</span>
-              <img src="/images/image.png" alt="2016 Image">
+              <img
+                class="img-timeline"
+                src="/images/image.png"
+                alt="2016 Image"
+              />
               <p>Descripción del evento de 2016...</p>
-              <button class="read-more">Leer más</button>
             </div>
           </div>
           <div class="timeline-item right">
             <div class="timeline-content">
               <span class="date">2017</span>
-              <img src="/images/image.png" alt="2017 Image">
+              <img
+                class="img-timeline"
+                src="/images/image.png"
+                alt="2017 Image"
+              />
               <p>Descripción del evento de 2017...</p>
-              <button class="read-more">Leer más</button>
             </div>
           </div>
           <div class="timeline-item left">
             <div class="timeline-content">
               <span class="date">2018</span>
-              <img src="/images/image.png" alt="2018 Image">
+              <img
+                class="img-timeline"
+                src="/images/image.png"
+                alt="2018 Image"
+              />
               <p>Descripción del evento de 2018...</p>
-              <button class="read-more">Leer más</button>
             </div>
           </div>
           <div class="circle-end"></div>
         </div>
       </section>
-      <section class="activities-section">
-        <h2>Actividades</h2>
-        <p>Nuestro club realiza diferentes actividades para obtener recursos económicos de ellas que le ayuden a solventar todos sus gastos anuales, puesto que nuestra institución no es patrocinada por ningún ente público o privado ni persona particular. Nuestra entidad obtiene sus beneficios económicos actualmente a través de su convenio interinstitucional con la caja de compensación familiar del cauca Comfacauca, y las diferentes actividades que realiza con sus beneficiarios deportistas, sus administrativos, su cuerpo técnico, los padres de familia y demás allegados a nuestros afiliados.</p>
-        <p>Realizamos actividades como: Paseos, bingos, venta de lechona, rifas, tómbolas, venta de alimentos entre otras, estas nos sirven antes que nada para comprar todo lo que concierne al club como implementación deportiva, papelería legal, pago de compromisos y afiliaciones entre otras, también efectuamos con estos ingresos talleres en los que tienen que ver con nuestros trabajadores, niños, niñas y adolescentes, tales como lo son intervenciones psicológicas, fiestas de cumpleaños, baby shower, salidas a cine, salidas pedagógicas, paseos, salidas deportivas, aniversarios, despedidas de fin de año entre otros que tienen como objeto abrir espacios que le permitan a los profesionales, beneficiarios y acompañantes, explorar, recrearse, ilustrarse, compartir, cooperar, y pasar un rato atractivo y agradable en compañía de sus compañeros y profesionales. A continuación, compartiremos algunas destacadas fotos de algunas actividades que realizamos durante los últimos años.</p>
-        
-        <div class="gallery">
-          <!-- Add 20 images here -->
-          <img src="/images/image.png" alt="Actividad 1">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <img src="/images/image.png" alt="Actividad 2">
-          <!-- Add more images as needed -->
+      <div class="section-container">
+        <div class="section">
+          <h2>Actividades</h2>
+          <p>
+            Nuestro club realiza diferentes actividades para obtener recursos
+            económicos de ellas que le ayuden a solventar todos sus gastos
+            anuales, puesto que nuestra institución no es patrocinada por ningún
+            ente público o privado ni persona particular. Nuestra entidad
+            obtiene sus beneficios económicos actualmente a través de su
+            convenio interinstitucional con la caja de compensación familiar del
+            cauca Comfacauca, y las diferentes actividades que realiza con sus
+            beneficiarios deportistas, sus administrativos, su cuerpo técnico,
+            los padres de familia y demás allegados a nuestros afiliados.
+          </p>
+          <p>
+            Realizamos actividades como: Paseos, bingos, venta de lechona,
+            rifas, tómbolas, venta de alimentos entre otras, estas nos sirven
+            antes que nada para comprar todo lo que concierne al club como
+            implementación deportiva, papelería legal, pago de compromisos y
+            afiliaciones entre otras, también efectuamos con estos ingresos
+            talleres en los que tienen que ver con nuestros trabajadores, niños,
+            niñas y adolescentes, tales como lo son intervenciones psicológicas,
+            fiestas de cumpleaños, baby shower, salidas a cine, salidas
+            pedagógicas, paseos, salidas deportivas, aniversarios, despedidas de
+            fin de año entre otros que tienen como objeto abrir espacios que le
+            permitan a los profesionales, beneficiarios y acompañantes,
+            explorar, recrearse, ilustrarse, compartir, cooperar, y pasar un
+            rato atractivo y agradable en compañía de sus compañeros y
+            profesionales. A continuación, compartiremos algunas destacadas
+            fotos de algunas actividades que realizamos durante los últimos
+            años.
+          </p>
         </div>
-      </section>
+      </div>
+      <div class="gallery">
+        {
+          photos.map((photo: Photo, index: number) => (
+            <div
+              class="photo-card"
+              data-index={index}
+              data-src={photo.src}
+              data-title={photo.title}
+            >
+              <img src={photo.src} alt={photo.title} />
+              <h3>{photo.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+      <div
+        id="photo-data"
+        data-photos={JSON.stringify(photos)}
+        style="display: none;"
+      >
+      </div>
     </main>
     <Footer />
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <span class="lightbox-prev">&#10094;</span>
+      <span class="lightbox-next">&#10095;</span>
+    </div>
   </body>
 </html>
 
 <style>
- body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
-}
-
-main {
-  padding: 8rem 1rem;
-  flex: 1;
-}
-
-section {
-  margin-bottom: 2rem;
-}
-
-.timeline-section h2,
-.activities-section h2 {
-  text-align: center;
-  color: #ff6600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-  margin-bottom: 4rem;
-}
-
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: #ff6600;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-.timeline-item {
-  padding: 20px 40px;
-  position: relative;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 45%;
-  margin-bottom: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  opacity: 0;
-  transform: translateX(-100%);
-  animation: slide-in-left 0.5s forwards;
-}
-
-.timeline-item.right {
-  left: 48.9%;
-  transform: translateX(100%);
-  animation: slide-in-right 0.5s forwards;
-}
-
-.timeline-item.left {
-  left: -0.5%;
-}
-
-.timeline-item.left::before {
-  content: " ";
-  position: absolute;
-  top: 15px;
-  right: -15px;
-  border-width: 15px;
-  border-style: solid;
-  border-color: transparent transparent transparent white;
-}
-
-.timeline-item.right::before {
-  content: " ";
-  position: absolute;
-  top: 15px;
-  left: -15px;
-  border-width: 15px;
-  border-style: solid;
-  border-color: transparent white transparent transparent;
-}
-
-.timeline-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-.timeline-content {
-  text-align: center;
-}
-
-.date {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #003366;
-  margin-bottom: 1rem;
-}
-
-img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.read-more {
-  background-color: #ff6600;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.read-more:hover {
-  background-color: #cc5200;
-  transform: scale(1.05);
-}
-
-.circle {
-  position: absolute;
-  background-color: #ff6600;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-}
-
-.circle.start {
-  left: 50%;
-  transform: translateX(-50%);
-  top: -10px; /* Adjust to position above the line */
-}
-
-.circle.end {
-  right: 0;
-  top: -10px; /* Adjust to position above the line */
-}
-
-.activities-section p {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto;
-  margin-bottom: 2rem;
-}
-
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.gallery img {
-  width: calc(25% - 1rem);
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-@keyframes slide-in-left {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
   }
-}
 
-@keyframes slide-in-right {
-  to {
-    opacity: 1;
-    transform: translateX(0);
+  main {
+    padding: 8rem 1rem;
+    flex: 1;
   }
-}
 
+  section {
+    margin-bottom: 2rem;
+  }
+
+  .timeline-section h2,
+  .activities-section h2 {
+    text-align: center;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    margin-bottom: 4rem;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #ff6600;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  .timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin-bottom: 2rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in-left 0.5s forwards;
+  }
+
+  .timeline-item.right {
+    left: 48.9%;
+    transform: translateX(100%);
+    animation: slide-in-right 0.5s forwards;
+  }
+
+  .timeline-item.left {
+    left: -0.5%;
+  }
+
+  .timeline-item.left::before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+  }
+
+  .timeline-item.right::before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .timeline-content {
+    text-align: center;
+  }
+
+  .date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+
+  .img-timeline {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    color: #ff6600;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+  }
+
+  .section {
+    flex: 1 1 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .read-more {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .read-more:hover {
+    background-color: #cc5200;
+    transform: scale(1.05);
+  }
+
+  .circle {
+    position: absolute;
+    background-color: #ff6600;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  .circle.start {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px; /* Adjust to position above the line */
+  }
+
+  .circle.end {
+    right: 0;
+    top: -10px; /* Adjust to position above the line */
+  }
+
+  .activities-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Asegurar 4 columnas por fila */
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  .photo-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .photo-card h3 {
+    margin: 0;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background: #003366;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .photo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  /* Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lightbox-content {
+    max-height: 80vh;
+    width: auto;
+    max-width: 90%;
+    display: block;
+    margin: auto;
+  }
+  .lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+  }
+  .lightbox-content,
+  .lightbox-caption {
+    animation: zoom 0.6s;
+  }
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .lightbox-close:hover,
+  .lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .lightbox-prev:hover,
+  .lightbox-next:hover {
+    color: #bbb;
+  }
+  .lightbox-prev {
+    left: 20px;
+  }
+  .lightbox-next {
+    right: 20px;
+  }
+
+  @keyframes slide-in-left {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 </style>
+
+<script>
+  let currentIndex = 0;
+  interface Photo {
+    src: string;
+    title: string;
+  }
+  let photos: Photo[] = [];
+
+  const photoDataElement = document.getElementById("photo-data");
+  if (photoDataElement) {
+    const dataPhotos = photoDataElement.getAttribute("data-photos");
+    if (dataPhotos) {
+      photos = JSON.parse(dataPhotos);
+    }
+  }
+
+  function openLightbox(index: number) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById(
+      "lightbox-img"
+    ) as HTMLImageElement;
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    if (lightbox && lightboxImg && lightboxCaption) {
+      currentIndex = index;
+      lightbox.style.display = "flex";
+      lightboxImg.src = photos[currentIndex].src;
+      lightboxCaption.innerText = photos[currentIndex].title;
+    }
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox) {
+      lightbox.style.display = "none";
+    }
+  }
+
+  function prevPhoto() {
+    console.log("Previous photo");
+  }
+
+  function nextPhoto() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    openLightbox(currentIndex);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const photoCards = document.querySelectorAll(".photo-card");
+    const lightbox = document.getElementById("lightbox");
+
+    if (lightbox) {
+      lightbox.style.display = "none";
+    }
+
+    photoCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const indexAttr = card.getAttribute("data-index");
+        if (indexAttr !== null) {
+          const index = parseInt(indexAttr, 10); // Aquí, 10 especifica que el número es en base 10
+          if (!isNaN(index)) {
+            openLightbox(index);
+          }
+        }
+      });
+    });
+
+    const lightboxClose = document.querySelector(".lightbox-close");
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", closeLightbox);
+    }
+
+    const lightboxPrev = document.querySelector(".lightbox-prev");
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener("click", prevPhoto);
+    }
+
+    const lightboxNext = document.querySelector(".lightbox-next");
+    if (lightboxNext) {
+      lightboxNext.addEventListener("click", nextPhoto);
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
+  });
+</script>
