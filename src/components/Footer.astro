@@ -27,24 +27,40 @@
     </div>
     <!-- Fila de enlaces oficiales y afiliados -->
     <div class="footer-row links-row">
-      <div>
+      <div class="image-container">
+        <div >
         <p><strong>Enlaces Oficiales</strong></p>
-        <a href="https://imderflorida.gov.co">IMDER Florida</a> |
-        <a href="https://www.valledelcauca.gov.co">Gobernación del Valle</a>
+        <a href="https://imderflorida.gov.co">
+          <img src="/images/footer/imder.jpg" alt="Club Deportivo Real Tolima" class="affiliate-logo">
+        </a> 
+        <a href="https://www.valledelcauca.gov.co">
+          <img src="/images/footer/gobernacion.jpg" alt="Gobernación del Valle del Cauca" class="affiliate-logo">
+        </a>
       </div>
-      <div>
-        <p><strong>Afiliados a</strong>: Liga Vallecaucana de Fútbol</p>
+    </div>
+      <div class="image-container">
+        <p><strong>Afiliados</strong></p>
+        <a href="https://www.lifutbolvalle.com">
+        <img src="/images/footer/liga.png" alt="Liga" class="affiliate-logo">
+      </a> 
       </div>
-      <div>
-        <p><strong>Convenio interinstitucional con</strong>:</p>
-        <img src="/images/real-tolima.png" alt="Club Deportivo Real Tolima" class="affiliate-logo">
+      <div class="image-container">
+        <a href="https://realtolimafc.com">
+        <p><strong>Convenio interinstitucional</strong></p>
+        <img src="/images/footer/tolima.webp" alt="Tolima" class="affiliate-logo with-bg">
+      </a> 
       </div>
-      <div>
+      <div class="image-container">
+        <a href="https://vicbay.com.co/">
         <p><strong>Indumentaria deportiva aliada</strong></p>
+        <img src="/images/footer/indumentaria.jpg" alt="Indumentaria deportiva aliada" class="affiliate-logo wide-logo">
+      </a> 
       </div>
-      <div>
-        <p><strong>Aliados comerciales</strong>:</p>
-        <img src="/images/sammy-cell.png" alt="Sammy Cell" class="affiliate-logo">
+      <div class="image-container">
+        <p><strong>Aliados comerciales</strong></p>
+        <a href="https://www.instagram.com/sammycell20/">
+        <img src="/images/footer/sammy.jpg" alt="Sammy Cell" class="affiliate-logo circular-logo">
+      </a> 
       </div>
     </div>
     <!-- Fila del programa formativo -->
@@ -55,12 +71,11 @@
         <p>© 2024 Club Evolución Deportiva. Todos los derechos reservados</p>
       </div>
     </div>
-  
     <!-- Fila de redes sociales -->
     <div class="footer-row">
       <div class="social-links">
         <a href="#"><img src="/images/facebook.png" alt="Facebook"></a>
-        <a href="#"><img src="/images/twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="/images/x.png" alt="Twitter"></a>
         <a href="#"><img src="/images/instagram.png" alt="Instagram"></a>
       </div>
     </div>
@@ -69,7 +84,7 @@
 
 <style>
   .footer {
-    background-color: #003366; /* Color de fondo del navbar */
+    background-color: #003366;
     color: #fff;
     padding: 2rem 1rem;
     text-align: center;
@@ -82,7 +97,7 @@
   .footer-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start; /* Alinea todos los elementos en la parte superior */
     flex-wrap: wrap;
     margin-bottom: 1.5rem;
   }
@@ -97,7 +112,7 @@
     color: #cc5200;
   }
   .footer .logo-grande {
-
+    max-width: 150px;
   }
   .footer .navigation ul {
     list-style: none;
@@ -117,34 +132,53 @@
   .footer .social-links a {
     margin: 0 0.5rem;
   }
-  .footer .social-links img, .footer .affiliate-logo {
-    width: 30px;
-    height: 30px;
+  .footer .affiliate-logo {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0.5rem 0;
+  }
+  .footer .social-links img {
+    width: 40px;
+    height: auto;
+  }
+  .footer .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    flex: 1; /* Asegura que todos los contenedores ocupen el mismo espacio */
+    min-width: 150px;
+    margin-bottom: 1rem;
   }
   .footer p strong {
     color: #cc5200;
+    margin-bottom: 0.5rem;
   }
-  .footer .links-row div {
+  .footer .links-row .image-container {
+    margin: 0 10px; /* Espacio entre contenedores */
+  }
+  .footer .affiliate-logo.wide-logo {
+    width: 200px;
+  }
+  .footer .with-bg {
+    border-radius: 50%;
+    background-color: #000;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+  }
+  .footer .circular-logo {
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .footer .program {
     flex: 1;
     text-align: center;
   }
-
-  .footer .program  {
+  .footer .social-links {
     flex: 1;
     text-align: center;
   }
-
-  .footer .social-links  {
-    flex: 1;
-    text-align: center;
-  }
-
-  .footer .social-links  {
-    flex: 1;
-    text-align: center;
-  }
-
 </style>
-
-<!-- FontAwesome CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
