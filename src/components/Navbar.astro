@@ -1,273 +1,340 @@
----
-const currentPath = Astro.url.pathname;
-const isActive = (path: string) => currentPath === path ? 'active' : '';
----
+--- const currentPath = Astro.url.pathname; const isActive = (path: string) => currentPath === path ? 'active' : ''; ---
 
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Evolución Deportiva</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* Incluye aquí el CSS */
-  </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Club Evolución Deportiva</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<style>
+		/* Incluye aquí el CSS */
+		
+	</style>
 </head>
 <body>
-  <div class="top-bar">
-    <div class="info">
-      <div><i class="fa fa-phone"></i> 304 373 5676</div>
-      <div><i class="fa fa-envelope"></i> evoldep@gmail.com</div>
-      <div><i class="fa-solid fa-location-dot"></i> Florida, Valle del Cauca, Colombia</div>
-      <div><i class="fa-solid fa-file-lines"></i> NIT: 900874043-1</div>
-    </div>
-    <div class="social-icons">
-      <a href="https://facebook.com/evoldep" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
-      <a href="https://x.com/evoldep" target="_blank"><img src="/images/x.png" alt="Twitter"></a>
-      <a href="https://instagram.com/evoldep" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
-      <a href="https://tiktok.com/@tevoldep" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
-    </div>
-  </div>
+	<div class="top-bar">
+		<div class="info">
+			<div><i class="fa fa-phone"></i> 304 373 5676</div>
+			<div><i class="fa fa-envelope"></i> evoldep@gmail.com</div>
+			<div><i class="fa-solid fa-location-dot"></i> Florida, Valle del Cauca, Colombia</div>
+			<div><i class="fa-solid fa-file-lines"></i> NIT: 900874043-1</div>
+		</div>
+		<div class="social-icons">
+			<a href="https://facebook.com/evoldep" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
+			<a href="https://x.com/evoldep" target="_blank"><img src="/images/x.png" alt="Twitter"></a>
+			<a href="https://instagram.com/evoldep" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+			<a href="https://tiktok.com/@tevoldep" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
+		</div>
+	</div>
 
-  <nav class="navbar">
-    <div class="menu-toggle">
-      <i class="fa fa-bars"></i>
-    </div>
+	<nav class="navbar">
+		<div class="menu-toggle"> <i class="fa fa-bars"></i> </div>
+		<div class="container">
+			<a href="/" class="logo-link"> <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo"> <span>Club Evolución Deportiva</span> </a>
+			<ul class="nav-links">
+				<li><a href="/inicio" class={isActive( '/inicio')}>Inicio</a></li>
+				<li><a href="/nosotros" class={isActive( '/nosotros')}>Nosotros</a></li>
+				<li><a href="/servicios" class={isActive( '/servicios')}>Servicios</a></li>
+				<li><a href="/actividades" class={isActive( '/actividades')}>Actividades y Torneos</a></li>
+				<li><a href="/noticias" class={isActive( '/noticias')}>Noticias y Destacados</a></li>
+				<li><a href="/contacto" class={isActive( '/contacto')}>Contáctenos</a></li>
+			</ul>
+     
+		</div>
+	</nav>
 
-    <div class="container">
-      <a href="/" class="logo-link">
-        <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo">
-        <span>Club Evolución Deportiva</span>
-      </a>
-      <ul class="nav-links">
-        <li><a href="/inicio" class={isActive('/inicio')}>Inicio</a></li>
-        <li><a href="/nosotros" class={isActive('/nosotros')}>Nosotros</a></li>
-        <li><a href="/servicios" class={isActive('/servicios')}>Servicios</a></li>
-        <li><a href="/actividades" class={isActive('/actividades')}>Actividades y Torneos</a></li>
-        <li><a href="/noticias" class={isActive('/noticias')}>Noticias y Destacados</a></li>
-        <li><a href="/contacto" class={isActive('/contacto')}>Contáctenos</a></li>
-      </ul>
-    </div>
-  </nav>
+	<!-- Menú Lateral -->
+	<div class="sidebar-menu">
+		<div class="menu-toggle-close">
+			<i class="fa fa-times"></i>
+		</div>
+		<ul class="nav-links">
+			<li><a href="/inicio" class={isActive( '/inicio')}>Inicio</a></li>
+			<li><a href="/nosotros" class={isActive( '/nosotros')}>Nosotros</a></li>
+			<li><a href="/servicios" class={isActive( '/servicios')}>Servicios</a></li>
+			<li><a href="/actividades" class={isActive( '/actividades')}>Actividades y Torneos</a></li>
+			<li><a href="/noticias" class={isActive( '/noticias')}>Noticias y Destacados</a></li>
+			<li><a href="/contacto" class={isActive( '/contacto')}>Contáctenos</a></li>
+		</ul>
+    
+	</div>
 
-  <!-- Menú Lateral -->
-  <div class="sidebar-menu">
-    <div class="menu-toggle-close">
-      <i class="fa fa-times"></i>
-    </div>
-    <ul class="nav-links">
-      <li><a href="/inicio" class={isActive('/inicio')}>Inicio</a></li>
-      <li><a href="/nosotros" class={isActive('/nosotros')}>Nosotros</a></li>
-      <li><a href="/servicios" class={isActive('/servicios')}>Servicios</a></li>
-      <li><a href="/actividades" class={isActive('/actividades')}>Actividades y Torneos</a></li>
-      <li><a href="/noticias" class={isActive('/noticias')}>Noticias y Destacados</a></li>
-      <li><a href="/contacto" class={isActive('/contacto')}>Contáctenos</a></li>
-    </ul>
-  </div>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle') as HTMLElement | null;
+    const sidebarMenu = document.querySelector('.sidebar-menu') as HTMLElement | null;
+    const menuClose = document.querySelector('.menu-toggle-close') as HTMLElement | null;
+    const body = document.body;
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const menuToggle = document.querySelector('.menu-toggle') as HTMLElement | null;
-      const sidebarMenu = document.querySelector('.sidebar-menu') as HTMLElement | null;
-      const body = document.body;
-  
-      if (menuToggle && sidebarMenu) {
+    if (menuToggle && sidebarMenu) {
         menuToggle.addEventListener('click', function() {
-          sidebarMenu.classList.toggle('open');
-          body.classList.toggle('menu-open');
+            sidebarMenu.classList.toggle('open');
+            body.classList.toggle('menu-open');
         });
-  
-        // Cierra el menú cuando se hace clic fuera del menú
+
         document.addEventListener('click', function(event) {
-          // Verifica si el evento target es un nodo y no está contenido en el menú o el botón de menú
-          const target = event.target as Node | null;
-          if (sidebarMenu.classList.contains('open') &&
-              target instanceof Node &&
-              !sidebarMenu.contains(target) &&
-              !menuToggle.contains(target)) {
-            sidebarMenu.classList.remove('open');
-            body.classList.remove('menu-open');
-          }
+            const target = event.target as Node | null;
+            if (sidebarMenu.classList.contains('open') &&
+                target instanceof Node &&
+                !sidebarMenu.contains(target) &&
+                !menuToggle.contains(target)) {
+                sidebarMenu.classList.remove('open');
+                body.classList.remove('menu-open');
+            }
         });
-      }
-    });
 
+        if (menuClose) {
+            menuClose.addEventListener('click', function() {
+                sidebarMenu.classList.remove('open');
+                body.classList.remove('menu-open');
+            });
+        }
+    }
+});
 
-    window.addEventListener('scroll', function() {
-    const topBar = document.querySelector('.top-bar') as HTMLElement;
-    const navbar = document.querySelector('.navbar') as HTMLElement;
+		
+        window.addEventListener('scroll', function() {
+  const topBar = document.querySelector('.top-bar') as HTMLElement;
+  const navbar = document.querySelector('.navbar') as HTMLElement;
+
+  if (window.innerWidth > 768) { // Solo aplica la transición en pantallas grandes
     if (topBar && navbar) {
       if (window.scrollY > 50) {
         topBar.style.transform = 'translateY(-100%)';
         navbar.style.top = '0';
       } else {
         topBar.style.transform = 'translateY(0)';
-        navbar.style.top = '30px'; // Asegúrate de que este valor coincide con la altura de tu top-bar
+        navbar.style.top = '30px';
       }
     }
-  });
-  </script>
+  } else {
+    // En pantallas pequeñas, asegúrate de que el navbar esté en la parte superior y no se mueva
+    if (navbar) {
+      navbar.style.top = '0';
+    }
+  }
+});
+
+		
+	</script>
 </body>
 </html>
 
 <style>
-  .top-bar {
-    background-color: #002244;
-    color: rgba(255, 255, 255, 0.6); /* Ajusta el valor de opacidad (0.0 a 1.0) según lo necesites */
+	.top-bar {
+	    background-color: #002244;
+	    color: rgba(255, 255, 255, 0.6);
+	    padding: 0.5rem 1rem;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	    transition: transform 0.3s ease-in-out;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: 1100;
+	  }
+	  .top-bar .info {
+	    display: flex;
+	    gap: 1.5rem;
+	    align-items: center;
+	  }
+	  .top-bar .info img {
+	    width: 20px;
+	    height: 20px;
+	    margin-right: 0.5rem;
+	  }
+	  .top-bar .social-icons {
+	    display: flex;
+	    gap: 1rem;
+	    margin-left: 1rem;
+	  }
+	  .top-bar .social-icons img {
+	    width: 20px;
+	    height: 20px;
+	  }
+	  .navbar {
+	    background-color: #003366;
+	    color: #fff;
+	    padding: 1rem;
+	    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	    position: fixed;
+	    width: 100%;
+	    z-index: 1000;
+	    transition: top 0.3s ease-in-out;
+	    top: 30px;
+	  }
+	  .container {
+	    display: flex;
+	    justify-content: space-between;
+	    align-items: center;
+	    margin: 0 auto;
+	    padding: 0 1rem;
+	    position: relative;
+	  }
+	  .logo-link {
+	    display: flex;
+	    align-items: center;
+	    text-decoration: none;
+	    color: #fff;
+	  }
+	  .logo-link .logo {
+	    max-width: 50px;
+	    margin-right: 10px;
+	  }
+	  .logo-link span {
+	    font-size: 1.5rem;
+	    font-weight: bold;
+	  }
+	  .nav-links {
+	    list-style: none;
+	    display: flex;
+	    gap: 1.5rem;
+	    margin-right: 1rem;
+	    padding: 0;
+	  }
+	  .nav-links a {
+	    text-decoration: none;
+	    color: #fff;
+	    transition: color 0.3s ease;
+	    position: relative;
+	    padding-bottom: 5px;
+	  }
+	  .nav-links a:hover {
+	    color: #cc5200;
+	  }
+	  .nav-links a.active {
+	    color: #cc5200;
+	  }
+	  .nav-links img {
+	    width: 24px;
+	    height: 24px;
+	    transition: transform 0.3s ease;
+	  }
+	  .nav-links img:hover {
+	    transform: scale(1.2);
+	  }
+	  main {
+	    padding-top: 100px;
+	  }
+	
+	  .menu-toggle {
+	    display: none;
+	    position: fixed;
+	    font-size: 1.5rem;
+	    color: #fff;
+	    cursor: pointer;
+	    z-index: 1200;
+	  }
+	
+	  @media (max-width: 768px) {
+	    .top-bar {
+	      display: none;
+	    }
+	
+	    .navbar {
+	      display: flex;
+	      justify-content: center;
+	      align-items: center;
+        top: 0; /* Asegúrate de que el navbar comience desde la parte superior */
+        padding-top: 1rem; /* Ajusta el padding si es necesario */
+ 	    }
 
-    padding: 0.5rem 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s ease-in-out;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1100; /* Asegúrate de que la top-bar esté encima del navbar */
-  }
-  .top-bar .info {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-  }
-  .top-bar .info img {
-    width: 20px;
-    height: 20px;
-    margin-right: 0.5rem;
-  }
-  .top-bar .social-icons {
-    display: flex;
-    gap: 1rem;
-    margin-left: 1rem; /* Ajusta el valor según lo necesites */
+ 
+	
+	    .menu-toggle {
+	      display: block;
+	      position: absolute;
+	      left: 10px;
+	    }
+	
+	    .logo-link {
+	      display: flex;
+	      justify-content: center;
+	      width: 100%;
+	    }
+	
+	   
 
-  }
-  .top-bar .social-icons img {
-    width: 20px;
-    height: 20px;
-  }
-  .navbar {
-    background-color: #003366;
-    color: #fff;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-    transition: top 0.3s ease-in-out;
-    top: 30px;
-  }
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
-  .logo-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-  }
-  .logo-link .logo {
-    max-width: 50px;
-    margin-right: 10px;
-  }
-  .logo-link span {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin-right: 1rem; /* Ajusta el valor según lo necesites */
-    padding: 0;
-  }
-  .nav-links a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-  }
-  .nav-links a:hover {
-    color: #cc5200;
-  }
-  .nav-links a.active {
-    color: #cc5200;
-  }
-  .nav-links img {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.3s ease;
-  }
-  .nav-links img:hover {
-    transform: scale(1.2);
-  }
-  main {
-    padding-top: 100px; /* Altura combinada de la top-bar y el navbar */
-  }
+      .logo-link .logo {
+        max-width: 30px; /* Ajusta el tamaño del logo */
+        margin-right: 5px; /* Ajusta el margen si es necesario */
+    }
 
-  /* Estilos generales */
-.menu-toggle {
-  display: none;
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  font-size: 1.5rem;
-  color: #fff;
-  cursor: pointer;
-  z-index: 1200; /* Asegúrate de que el botón esté sobre el menú lateral */
-}
+    .logo-link span {
+        font-size: 1rem; /* Ajusta el tamaño del texto */
+        font-weight: normal; /* Puedes ajustar el grosor si lo deseas */
+    }
+	
+	    .nav-links {
+	      display: none;
+	    }
 
-@media (max-width: 768px) {
-  .top-bar, .navbar {
-    display: none;
-  }
+      .social-icons {
+	      display: none;
+	    }
+	
+	    .sidebar-menu {
+	      position: fixed;
+	      top: 0;
+        padding: 1rem; /* Añade un padding para un mejor aspecto */
+        justify-content: space-between; /* Espacia los elementos dentro del sidebar */
+        height: 100vh; /* Asegúrate de que el sidebar ocupe toda la altura de la ventana */
+	      width: 250px;
+	      background-color: #003366;
+	      color: #fff;
+	      transition: transform 0.3s ease;
+	      z-index: 1100;
+        left: 0; /* Mueve el sidebar al lado izquierdo */
+        right: auto; /* Asegúrate de que no esté alineado a la derecha */
+        transform: translateX(-100%); /* Haz que el sidebar se esconda fuera de la pantalla hacia la izquierda */
+	    }
 
-  .menu-toggle {
-    display: block;
-  }
 
-  .sidebar-menu {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 250px;
-    background-color: #003366;
-    color: #fff;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    z-index: 1100;
-  }
+      .sidebar-menu .social-icons {
+        display: flex;
+        justify-content: center; /* Centra los íconos */
+        gap: 1rem; /* Espacio entre los íconos */
+        margin-top: auto; /* Empuja los íconos hacia la parte inferior del sidebar */
+        padding: 1rem 0; /* Añade un padding en la parte superior e inferior */
 
-  .sidebar-menu.open {
-    transform: translateX(0);
-  }
+    }
 
-  .sidebar-menu .nav-links {
-    display: flex;
-    flex-direction: column;
-    margin-top: 2rem;
-  }
+    .sidebar-menu .social-icons a img {
+        width: 24px; /* Ajusta el tamaño de los íconos */
+        height: 24px;
+    }
 
-  .sidebar-menu .nav-links a {
-    padding: 1rem;
-    border-bottom: 1px solid #fff;
-  }
-}
+      .menu-toggle-close {
+        font-size: 1.5rem; /* Aumenta el tamaño del ícono de cerrar */
+        color: #fff;
+        position: absolute;
+        top: 10px;
+        right: 10px; /* Coloca el ícono de cerrar en el lado derecho */
+        cursor: pointer;
+    }
+	
+	    .sidebar-menu.open {
+        transform: translateX(0); /* Muestra el sidebar cuando está abierto */
+	    }
+	
+	    .sidebar-menu .nav-links {
+	      display: flex;
+	      flex-direction: column;
+	      margin-top: 2rem;
+        gap: 3rem; /* Añade espacio entre los enlaces */
 
-/* Estilos opcionales para la transición */
-body.menu-open {
-  overflow: hidden; /* Previene el desplazamiento del contenido en segundo plano */
-}
-
+	    }
+	
+	    .sidebar-menu .nav-links a {
+	      padding: 1rem;
+	    }
+	  }
+	
+	  body.menu-open {
+	    overflow: hidden;
+	  }
+	
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-
-
-
