@@ -87,7 +87,7 @@ const photos: Photo[] = [
     <Navbar />
     <main>
       <section class="timeline-section">
-        <h2>Actividades y Torneos</h2>
+        <h2>ACTIVIDADES Y TORNEOS</h2>
         <div class="timeline">
           <div class="circle-start"></div>
           <div class="timeline-item left">
@@ -163,8 +163,8 @@ const photos: Photo[] = [
         </div>
       </section>
       <div class="section-container">
-        <div class="section">
-          <h2>Actividades</h2>
+        <div class="section" id="eventos">
+          <h2>ACTIVIDADES</h2>
           <p>
             Nuestro club realiza diferentes actividades para obtener recursos
             económicos de ellas que le ayuden a solventar todos sus gastos
@@ -242,8 +242,7 @@ const photos: Photo[] = [
   }
 
   main {
-    padding: 8rem 1rem;
-    flex: 1;
+    padding: 6rem 1rem 2rem 1rem; /* Ajustar el padding-top para dar espacio al navbar */
   }
 
   section {
@@ -344,9 +343,19 @@ const photos: Photo[] = [
   }
 
   h2 {
-    color: #ff6600;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  #eventos h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   }
 
   .section-container {
@@ -418,7 +427,7 @@ const photos: Photo[] = [
 
   .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Asegurar 4 columnas por fila */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
     padding: 2rem;
 
@@ -554,6 +563,65 @@ const photos: Photo[] = [
       transform: translateX(0);
     }
   }
+
+
+  @media (max-width: 768px) {
+
+
+.lightbox {
+display: none;
+position: fixed;
+z-index: 9999;
+padding-top: 60px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.9);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column; /* Cambiado a columna para la versión móvil */
+}
+
+.lightbox-content {
+max-height: 80vh;
+width: auto;
+max-width: 90%;
+display: block;
+margin: auto;
+}
+
+
+
+
+.lightbox-prev,
+.lightbox-next {
+top: 40%;
+
+}
+
+.timeline-section h2 {
+text-align: center;
+margin-bottom: 2rem;
+font-size: 2rem;
+color: #ff6600;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.timeline-item.right {
+    left: 39%;
+    transform: translateX(100%);
+    animation: slide-in-right 0.5s forwards;
+  }
+
+  .timeline-item.left {
+    left: -7%;
+  }
+
+}
+
 </style>
 
 <script>

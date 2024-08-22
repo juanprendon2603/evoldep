@@ -25,7 +25,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
   </header>
   <main>
     <section id="fortalezas">
-      <h2>Fortalezas</h2>
+      <h2>FORTALEZAS</h2>
       <div class="strengths">
         <div class="strength">
           <div class="icon">
@@ -60,7 +60,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 
     <!-- Nueva sección de Eventos y Programas -->
     <section id="eventos">
-      <h2>Eventos y Programas</h2>
+      <h2>EVENTOS Y PROGRAMAS</h2>
       <div class="events">
         <div class="event">
           <h3>Curso de tecnificación</h3>
@@ -201,15 +201,51 @@ background-size: cover;
   }
   .event h3 {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
     color: #003366;
     text-align: center;
 
   }
-
-
   .event p {
     font-size: 1rem;
     color: #333;
+  }
+
+  @media (max-width: 768px) {
+
+    .hero h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+    #fortalezas h2,
+  #eventos h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin: 0;
+  }
+  
+
+  .hero {
+    background: url('/images/banner.jpg') no-repeat center center;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 14rem 1rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+    
+  }
+  
   }
 </style>

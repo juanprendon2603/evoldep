@@ -20,7 +20,7 @@ import Navbar from "../../components/Navbar.astro";
     <Navbar />
     <main>
       <section class="hero">
-        <h2>Cancha principal del parque bosque municipal</h2>
+        <h2>CANCHA PRINCIPAL DEL PARQUE BOSQUE MUNICIPAL</h2>
         <img
           class="banner-image"
           src="/images/actividades/62.jpg"
@@ -116,5 +116,31 @@ import Navbar from "../../components/Navbar.astro";
   .review-text {
     font-size: 1.25rem;
     margin-bottom: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .section-container {
+      flex-direction: column; /* Coloca la descripción y el mapa en columna */
+      gap: 1rem;
+    }
+
+    .section, 
+    .map-container {
+      flex: 1 1 100%; /* Asegura que cada sección ocupe el ancho completo */
+      max-width: 100%; /* Evita que se limiten las secciones en pantallas pequeñas */
+    }
+
+    .banner-image {
+      max-width: 100%; /* Asegura que la imagen del banner ocupe el ancho completo */
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 2rem; /* Reduce el tamaño del título en pantallas más pequeñas */
+    }
+
+    .review-text {
+      font-size: 1rem; /* Reduce el tamaño del texto en pantallas más pequeñas */
+    }
   }
 </style>

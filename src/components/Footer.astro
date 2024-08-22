@@ -8,12 +8,12 @@
       <nav class="navigation">
         <p><strong>Navegación</strong></p>
         <ul>
-          <li><a href="/inicio">Inicio</a></li>
-          <li><a href="/nosotros">Nosotros</a></li>
-          <li><a href="/servicios">Servicios</a></li>
-          <li><a href="/actividades">Actividades y Torneos</a></li>
-          <li><a href="/noticias">Noticias y Destacados</a></li>
-          <li><a href="/contacto">Contáctenos</a></li>
+          <li><a href="/inicio">INICIO</a></li>
+          <li><a href="/nosotros">NOSOTROS</a></li>
+          <li><a href="/servicios">SERVICIOS</a></li>
+          <li><a href="/actividades">ACTIVIADES Y TORNEOS</a></li>
+          <li><a href="/noticias">NOTICIAS Y DESTACADOS</a></li>
+          <li><a href="/contacto">CONTACTENOS</a></li>
         </ul>
       </nav>
       <div class="contact">
@@ -180,5 +180,22 @@
   .footer .social-links {
     flex: 1;
     text-align: center;
+  }
+
+
+  @media (max-width: 768px) {
+    .footer-row {
+      flex-direction: column; /* Cambia la dirección del flex a columna en pantallas pequeñas */
+      align-items: center; /* Centra los elementos verticalmente */
+    }
+
+    .footer .logo-grande {
+    max-width: 80px;
+  }
+    .footer .navigation,
+    .footer .contact {
+      text-align: center; /* Centra el texto en pantallas pequeñas */
+      margin-bottom: 1rem;
+    }
   }
 </style>

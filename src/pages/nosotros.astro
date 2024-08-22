@@ -19,7 +19,7 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
       <!-- Reseña Section -->
       <div class="section-container">
         <section class="section">
-          <h2>Reseña</h2>
+          <h2>RESEÑA</h2>
           <p class="review-text">
             El Club Deportivo Evolución Deportiva fue creado en el año 2015,
             como una institución dedicada a promover estilos y proyectos de vida
@@ -39,7 +39,7 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
 
       <div class="section-container">
         <section class="section">
-          <h2>Nombre del Club</h2>
+          <h2>NOMBRE DEL CLUB</h2>
           <p>
             Evolución deportiva es una denominación con un significado muy
             importante, ya que en Colombia no todos los clubes de formación
@@ -58,7 +58,7 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
         </section>
 
         <section class="section">
-          <h2>Perfil institucional</h2>
+          <h2>PERFIL INSTITUCIONAL</h2>
           <p>
             Cargando nuestro lema “Forjando seres íntegros para la evolución de
             una sociedad”, el Club Deportivo Evolución Deportiva contribuye
@@ -76,7 +76,7 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
         </section>
 
         <section class="section">
-          <h2>Política de calidad</h2>
+          <h2>POLITICA DE CALIDAD</h2>
           <p>
             Nuestro compromiso es la prestación de servicios deportivos,
             formativos, recreativos, competitivos e integrales a través del
@@ -95,7 +95,7 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
             src="/images/bandera.png"
             alt="Bandera del Club Evolución Deportiva"
           />
-          <h2>Nuestra bandera</h2>
+          <h2>NUESTRA BANDERA</h2>
           <p>
             Nuestra mascota Eder: hace un homenaje al cultivo de la caña de
             azúcar, que se encuentra sobre toda nuestra región del Valle del
@@ -304,9 +304,11 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   h2 {
-    color: #ff6600;
     text-align: center;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
   }
   p {
     text-align: justify;
@@ -476,6 +478,25 @@ import ValoresCorporativos from "../components/ValoresCorporativos.astro";
     align-items: center;
     max-width: 150px;
     text-align: center;
+  }
+
+  @media (max-width: 768px) {
+
+.hero h1 {
+font-size: 2rem;
+margin: 0;
+}
+
+ h2 {
+text-align: center;
+margin-bottom: 2rem;
+font-size: 1.5rem;
+color: #ff6600;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+
+
   }
 </style>
 
