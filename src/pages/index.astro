@@ -12,9 +12,9 @@
       height: 100%;
       margin: 0;
       font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
       background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+      background-size: cover;
+      background-attachment: fixed;
     }
 
     .hero {
@@ -24,12 +24,14 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
       padding: 2rem;
     }
 
     .hero .logo {
-      max-width: 150px;
+      max-width: 200px;
+      width: 100%;
+      height: auto;
       margin-bottom: 1rem;
       transition: transform 0.3s ease;
     }
@@ -49,7 +51,7 @@
 
     .container {
       text-align: center;
-      margin: 3rem 0; /* Espacio superior e inferior */
+      margin: 3rem 0;
     }
 
     .buttons {
@@ -75,7 +77,6 @@
       border-radius: 5px;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
-      transform: rotate(-5deg);
     }
 
     .buttons .button i {
@@ -93,13 +94,14 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
       margin-top: 6rem;
       margin-bottom: 3rem;
     }
 
     .social-icons a {
       display: inline-block;
-      margin: 0 1.5rem;
+      margin: 0.5rem;
       border-radius: 50%;
       overflow: hidden;
       transition: transform 0.3s;
@@ -120,43 +122,64 @@
     }
 
     /* Estilos para hacer responsive */
-    @media (max-width: 768) {
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        max-width: 90%;
+      }
+
+      .buttons {
+        flex-direction: column;
+        margin-top: 0.1rem;
+      }
+
+      .buttons .button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+      }
+
+      .social-icons {
+        margin-top: 1rem;
+      margin-bottom: 1rem;
+      }
+
+      .social-icons a img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    @media (max-width: 480px) {
 
       .hero .logo {
       max-width: 150px;
-      margin-top: 3rem;
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
       transition: transform 0.3s ease;
     }
 
 
       .hero h1 {
-        font-size: 2.5rem; /* Tamaño del texto del encabezado */
+        font-size: 2rem;
       }
 
       .hero p {
-        font-size: 1.2rem; /* Tamaño del texto del párrafo */
-        max-width: 90%; /* Ajuste del ancho máximo del párrafo */
-      }
-
-      .buttons {
-        flex-direction: column; /* Botones apilados verticalmente */
-        margin-top: 0.1rem; /* Ajuste del margen superior para los íconos sociales */
-
+        font-size: 1rem;
       }
 
       .buttons .button {
-        padding: 0.75rem 1.5rem; /* Ajuste del padding de los botones */
-        font-size: 1rem; /* Tamaño del texto del botón */
-        
-      }
-
-      .social-icons {
-        margin-top: 2rem; /* Ajuste del margen superior para los íconos sociales */
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
       }
 
       .social-icons a img {
-        width: 60px; /* Tamaño reducido de los íconos sociales */
-        height: 60px;
+        width: 45px;
+        height: 45px;
       }
     }
   </style>
@@ -169,13 +192,15 @@
     <div class="container">
       <div class="buttons">
         <a href="./inicio" class="button"><i class="fas fa-globe"></i> Visita nuestra página web</a>
-        <a href="mailto:tu-email@ejemplo.com" class="button"><i class="fas fa-envelope"></i> Escríbenos un email</a>
-        <a href="https://wa.me/+573043735676" target="_blank" class="button"><i class="fas fa-comments"></i> Hablemos por WhatsApp</a>
       </div>
       <div class="social-icons">
         <a href="https://www.facebook.com/evoldep" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>
         <a href="https://www.tiktok.com/@evoldep" target="_blank"><img src="/images/tik-tok.png" alt="TikTok"></a>
+        <a href="https://x.com/evoldep" target="_blank"><img src="/images/x.png" alt="Instagram"></a>
         <a href="https://www.instagram.com/evoldep" target="_blank"><img src="/images/instagram.png" alt="Instagram"></a>
+        <a href="https://wa.me/+573043735676" target="_blank"><img src="/images/whatsappIndex.png" alt="Whatsapp"></a>
+        <a href="mailto:tu-email@ejemplo.com" target="_blank"><img src="/images/sobre.png" alt="Instagram"></a>
+        <a href="https://www.youtube.com/@evoldep/streams" target="_blank"><img src="/images/youtube.png" alt="Instagram"></a>
       </div>
     </div>
   </div>

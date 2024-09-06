@@ -1,0 +1,692 @@
+---
+import Footer from "../../components/Footer.astro";
+import Navbar from "../../components/Navbar.astro";
+
+interface Photo {
+  src: string;
+  title: string;
+}
+
+const photos: Photo[] = [
+  { src: "/images/actividades/2017/1.jpg", title: "Precursores del proyecto Copa Telepacifico 2017 y 2018 para Evoldep, de izquierda a derecha los profesionales en deporte Armando Guerrero y Diego Idrobo" },
+  { src: "/images/actividades/2017/2.jpg", title: "Mayo 15 2017- Evoldep 1C vs America Buenaventura" },
+  { src: "/images/actividades/2017/3.jpg", title: "Junio 3 2017- Deporcordoba vs Evoldep 1C" },
+  { src: "/images/actividades/2017/4.jpg", title: "Julio 30 2017- Evoldep vs Club del Valle" },
+  { src: "/images/actividades/2017/5.jpg", title: "Invitación a la emisora pluss Radio despues de la eliminacion de la Copa Telepacifico" },
+  { src: "/images/actividades/2017/6.jpg", title: "Febrero 26 2017- Partido pretemporada" },
+  { src: "/images/actividades/2017/7.jpg", title: "Etapas recuperación 1c 2017" },
+  { src: "/images/actividades/2017/8.jpg", title: "Charlas psicologicas de pretemporada 1c Profesional Alejandra" },
+  { src: "/images/actividades/2017/9.jpg", title: "Abril 29 2017- Evoldep 1C vs Semillas Futuro" },
+  { src: "/images/actividades/2017/10.jpg", title: "Abril 8 2017- Evoldep 1C vs Siloe" },
+  { src: "/images/actividades/2017/11.jpg", title: "28 Agosto 2017-Evoldep 1C vs America, cancha la candela." },
+  { src: "/images/actividades/2017/12.jpg", title: "27 Junio 2017- Entrenamiento 1C" },
+  { src: "/images/actividades/2017/13.jpg", title: "25 Oct 2017- Evoldep 1C vs Real Marcali" },
+  { src: "/images/actividades/2017/14.jpg", title: "21 Febrero 2017- Preparaciòn táctica (Pretemporada)" },
+  { src: "/images/actividades/2017/15.jpg", title: "20 Marzo 2017- Evoldep vs Chagui, Fabian Escobar Sub-21" },
+  { src: "/images/actividades/2017/16.jpg", title: "17 Julio 2017-Chagui vs Evoldep" },
+  { src: "/images/actividades/2017/17.jpg", title: "12 Nov 2017-Categoria 1C finalizacion en 8vos Copa Telepacifico" },
+  { src: "/images/actividades/2017/18.jpg", title: "10 Septiembre 2017-Evoldep 1C vs HH en Florida" },
+  { src: "/images/actividades/2017/19.jpg", title: "4 Marzo 2017 – preparación física pretemporada" },
+  { src: "/images/actividades/2017/20.jpg", title: "Primer partido Copa telepacifico 2017" },
+  { src: "/images/actividades/2017/21.jpg", title: "3 Sept 2017-Evoldep 1C vs Aguilas Distrital" },
+  { src: "/images/actividades/2017/22.jpg", title: "3 Febrero 2017- Incio proyecto Copa Telepacifico 2017" },
+  { src: "/images/actividades/2017/23.jpg", title: "2 Julio 2017- Evoldep 1C vs Cañasgordas" },
+  { src: "/images/actividades/2017/24.jpg", title: "Talleres de Psicologia" },
+  { src: "/images/actividades/2017/25.jpg", title: "Salida segundo partido local primera C 2017" },
+  { src: "/images/actividades/2017/26.jpg", title: "Primera Invitación a la emisora pluss Radio" },
+  { src: "/images/actividades/2017/27.jpg", title: "Nuestro central Jean Carlo Nieva convocado al 1er microcilo de la Selección Valle Sub 21 2017" },
+  { src: "/images/actividades/2017/28.jpg", title: "Capitan Andres Felipe Sanchez en la entrada en calor" },
+  { src: "/images/actividades/2017/29.jpg", title: "19 Abril 2018-Fernando velez nuestro central capitan frente a Cortua de local en nuestra sede" },
+  { src: "/images/actividades/2017/30.jpg", title: "Entrevista Pluss Radio a nuestro Presidente Diego Idrobo" },
+  { src: "/images/actividades/2017/31.jpg", title: "Entrevista Pluss Radio a nuestro volante Andres Sanches" },
+  { src: "/images/actividades/2017/32.jpg", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/33.jpg", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/34.png", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/35.png", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/36.png", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/37.png", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/38.png", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/39.png", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/40.jpg", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/41.jpg", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+  { src: "/images/actividades/2017/42.jpg", title: "Mejores momentos de la transmisión por el canal Telepacifico" },
+];
+
+const photos2: Photo[] = [
+  { src: "/images/actividades/2017/43.jpg", title: "12 Nov 2017-Categoria Sub9 finalizacion fase de grupos Copa Futuros Talentos" },
+  { src: "/images/actividades/2017/44.jpg", title: "12 Nov 2017-Categoria Sub11 finalizacion fase de grupos Copa Futuros Talentos (Pradera)" },
+  { src: "/images/actividades/2017/45.jpg", title: "17 Septimbre 2017- Evodep Sub9 vs Real Academia por copa Futuros Talentos" },
+  { src: "/images/actividades/2017/46.jpg", title: "Inicios Copa Futuros Talentos 2017 Categoria Sub11 (parque bosquee municipal)" },
+  { src: "/images/actividades/2017/47.jpg", title: "12 Febrero 2017 Categoria Sub7 fase incial Copa Futuros talentos" },
+  { src: "/images/actividades/2017/48.jpg", title: "17 Septimbre 2017- Evodep Sub 9vs Real Academia Pradera por copa Futuros Talentos" },
+  
+];
+
+
+const photos3: Photo[] = [
+  { src: "/images/actividades/2017/49.jpg", title: "2 Dic 2017-Semifinales categoría Sub9 Copa Oriente 2017" },
+  { src: "/images/actividades/2017/50.jpg", title: "15 Oct 2017- Evodep Sub9 vs en Copa Oriente" },
+  { src: "/images/actividades/2017/51.jpg", title: "Abril 10 2017- Armando los grupos… para la Copa Oriente" },
+  { src: "/images/actividades/2017/52.jpg", title: "17 Septimbre 2017- Evodep Sub11 vs Astros Gorgona por Copa Oriente" },
+  
+];
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Actividades y Torneos - Club Evolución Deportiva</title>
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+  </head>
+  <body>
+    <Navbar />
+    <main>
+    
+      <div class="section-container">
+        <div class="section" id="eventos">
+          <h2>
+            COPA TELEPACIFICO LIFUTBOLVALLE III DIVISION 2017</h2>
+          <p>
+            En el año 2017 nuestra institución participo en la Copa Telepacifico 2017, obteniendo excelentes resultados con nuestra categoría sub-21 (tercera división). Nuestro club realizo un gestión deportiva enorme al mando del profesional en deporte Armando Guerrero Álvarez,  que se encargó durante todo el año de la parte deportiva y económica, el profesional en deporte Diego Fernando Idrobo Becerra presidente del club gestiono los factores administrativos, logísticos, y preparación física de los deportistas participantes, conformando un cuerpo técnico en donde se encontraban: la licenciada en pedagogía Diana Patricia Gaviria Zúñiga esposa de nuestro director técnico quien nos acompañó en todos los partidos del torneo como delegada, la enfermera Kelly Jhoanna Marín Escobar, estudiante de enfermería que nos asistió como enfermera durante todos los partidos y entrenamientos la temporada, los fisioterapeutas Erick Gomajoa Marín y Farit Gomajoa Marín quien nos apoyó en las labores de recuperación y prevención de lesiones o traumas, la psicóloga Alejandra Moreno quien realizo intervenciones con nuestros deportistas durante toda la pretemporada.
+          </p>
+            
+            <p>
+  
+              Nuestros jugadores llegaron procedentes de principalmente de dos equipos locales: Rey de reyes y Danger FC quien finalmente se fusiono con nuestra entidad, en nuestra primera incursión en esta competición, sorteamos el grupo C que integraba 19 oncenos de la región del norte del departamento del cauca y valle del cauca, tras 38 jornadas concluimos en la 5ta posición con 63 puntos, +19 en diferencia de gol, recibiendo 43 goles y convirtiendo 62, ganando 19, empatando 6 y perdiendo 11 encuentros, repercutiendo con un rendimiento del 58.33%, el cual nos clasifico entre los primeros 9 conjuntos del grupo C para disputar los playoffs en los 16vos de final, destacamos la merecida victoria ante el equipo profesional América de Cali en su sede la candela, y el empate a 0 en cuatro esquinas de Tuluá ante el equipo profesional Cortulua. Nuestra participación también dio méritos ante la liga de fútbol del Valle para ser transmitidos en vivió a través del canal regional Telepacifico en un encuentro realizado el 15 de Septiembre de 2017, por la fecha 31 del torneo, en Jamundi Valle, donde nos enfrentamos al Club Deportivo Independiente del Valle de Cali cayendo derrotados 2×1 en una excelente presentación futbolística de nuestro conjunto que perdió el partido tan solo en los últimos minutos del encuentro, resaltamos que nuestro club fue el primer equipo de Florida Valle en ser transmitido por este torneo.
+            </p>
+      
+              <p>
+    
+                
+                En la instancia 16vos de final y tras igualar a 0 goles en ambas confrontaciones con el similar de Futbol Paz de la ciudad de Cali, caímos derrotados en la vuelta 5-3 por penales en el estadio, Pero Díaz de Florida Valle. Esto demuestra el alto grado de compromiso que tenemos con los deportistas de nuestro municipio. Agradecemos a la comunidad florida quien fue participe de este proyecto asistiendo al estadio Pero Diaz a alentar a nuestros jugadores, agradecemos también a la administración municipal en cabeza de IMDER Florida 2017 por el préstamo del estadio Pero Diaz para entrenamientos y partidos, retribuimos también toda nuestra gratitud a la emisora local Pluss Radio FM 96.0 quien fue participe activo de todo este proyecto difundiendo, todos nuestros partidos, entrenamientos, actividades y situaciones presentadas a través de su dial y redes sociales. A todas las personas que de buen corazón contribuyeron en la realización de este proyecto mil gracias, Dios les pague y les bendiga, este proyecto no conto con el acompañamiento económico de la administración municipal o empresas privadas, pero sí de todos nuestros jugadores, cuerpo técnico, sus familias y comunidad en general que aporto económicamente de una u otra manera a tan lindo macrociclo.          </p>
+          
+        </div>
+      </div>
+      <div class="gallery">
+        {
+          photos.map((photo: Photo, index: number) => (
+            <div
+              class="photo-card"
+              data-index={index}
+              data-src={photo.src}
+              data-title={photo.title}
+            >
+              <img src={photo.src} alt={photo.title} />
+              <h3>{photo.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="section-container">
+        <div class="section" id="eventos">
+          <h2>COPA FUTUROS TALENTOS 2017</h2>
+          <p>
+            Nuestro club realizo un esfuerzo económico muy grande para acceder a este torneo, debido a sus costos de inscripción y desplazamientos por los diferentes localidades aledañas a nuestro domicilio de entrenamientos, este torneo realizado por los entrenadores del Club Deportivo Juventus de Florida Valle, realizo en su primera versión en los municipios de Candelaria, Villagorgona, Pradera y Florida en el departamento del Valle, y Miranda y Corinto en el departamento del Cauca.          </p>
+            
+            <p>
+  
+              Nuestra institución deportiva participo con tres categorías Sub 7, Sub 9 y Sub 11, todas tres superando con éxito la fase de grupos, clasificadas en la tercera casilla a los playoffs donde salimos derrotados con todas las categorías en la fase de semifinales, cumpliendo una excelente labor de nuestros deportistas que lograron compartir experiencias fuera de nuestro municipio con equipos y deportistas de otras localidades los cuales no habíamos enfrentado.            </p>
+      
+              <p>
+    
+                
+                Nuestra Categoría Sub 11 estuvo liderada por el profesional en deporte Alejandro Ochoa Sanz, y nuestra categoría Sub 9 por el profesional en deporte Juan Manuel Yandun, siempre en compañía del presidente Diego Idrobo, nuestros agradecimientos para ellos y los deportistas que cumplieron con este proceso, Dios les bendice.          
+        </div>
+      </div>
+      <div class="gallery">
+        {
+          photos2.map((photo: Photo, index: number) => (
+            <div
+              class="photo-card"
+              data-index={index}
+              data-src={photo.src}
+              data-title={photo.title}
+            >
+              <img src={photo.src} alt={photo.title} />
+              <h3>{photo.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+
+
+      <div class="section-container">
+        <div class="section" id="eventos">
+          <h2>COPA ORIENTE LIFUTBOLVALLE 2017</h2>
+          <p>
+            Nuestro club participa por primera vez de un torneo de la liga vallecaucana de futbol con sus categorías menores, este torneo realizado por el comité de futbol de Florida Valle y regulado por la Liga Vallecaucana de Futbol, realizo en su primera versión en los municipios de Candelaria, Villagorgona, Pradera y Florida en el departamento del Valle, y Miranda y Corinto en el norte del departamento del Cauca.            
+          </p>
+          <p>
+  
+              Nuestra institución deportiva participo con dos categorías Sub 9 y Sub 11, todas dos superando con éxito la fase de grupos, clasificados en la primera y tercera casilla respectivamente a los playoffs donde salimos derrotados con ambas categorías en la fase de semifinales, cumpliendo una excelente labor de nuestros deportistas que lograron experimentar y enriquecer sus fomentos deportivos en esta copa. Nuestra Categoría Sub 11 estuvo liderada por el profesional en deporte Alejandro Ochoa Sanz, y nuestra categoría Sub 9 por el profesional en deporte Juan Manuel Yandun, siempre en compañía del presidente Diego Idrobo, nuestros agradecimientos por tan ardua labor dejando en alto ante la región el nombre de nuestra institución. Bendiciones a los entrenadores y deportistas que participaron activamente de este hermoso torneo.
+
+      
+          </p>
+    
+                
+        </div>
+      </div>
+      <div class="gallery">
+        {
+          photos3.map((photo: Photo, index: number) => (
+            <div
+              class="photo-card"
+              data-index={index}
+              data-src={photo.src}
+              data-title={photo.title}
+            >
+              <img src={photo.src} alt={photo.title} />
+              <h3>{photo.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+
+
+      <div
+        id="photo-data"
+        data-photos={JSON.stringify(photos)}
+        style="display: none;"
+      >
+      </div>
+    </main>
+    <Footer />
+    <!-- Lightbox Container -->
+    <div id="lightbox" class="lightbox">
+      <span class="lightbox-close">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" />
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <span class="lightbox-prev">&#10094;</span>
+      <span class="lightbox-next">&#10095;</span>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+  }
+
+  main {
+    padding: 6rem 1rem 2rem 1rem; /* Ajustar el padding-top para dar espacio al navbar */
+  }
+
+  section {
+    margin-bottom: 2rem;
+  }
+
+  .timeline-section h2,
+  .activities-section h2 {
+    text-align: center;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    margin-bottom: 4rem;
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .timeline::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background-color: #ff6600;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+
+  .timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    margin-bottom: 2rem;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateX(-100%);
+    animation: slide-in-left 0.5s forwards;
+  }
+
+  .timeline-item.right {
+    left: 48.9%;
+    transform: translateX(100%);
+    animation: slide-in-right 0.5s forwards;
+  }
+
+  .timeline-item.left {
+    left: -7%;
+  }
+
+  .timeline-item.left::before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent transparent transparent white;
+  }
+
+  .timeline-item.right::before {
+    content: " ";
+    position: absolute;
+    top: 15px;
+    left: -15px;
+    border-width: 15px;
+    border-style: solid;
+    border-color: transparent white transparent transparent;
+  }
+
+  .timeline-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .timeline-content {
+    text-align: center;
+  }
+
+  .date {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 1rem;
+  }
+
+  .img-timeline {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  #eventos h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  .section-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+  }
+
+  .section {
+    flex: 1 1 100%;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .read-more {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+
+  .read-more:hover {
+    background-color: #cc5200;
+    transform: scale(1.05);
+  }
+
+  .circle {
+    position: absolute;
+    background-color: #ff6600;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+
+  .circle.start {
+    left: 50%;
+    transform: translateX(-50%);
+    top: -10px; /* Adjust to position above the line */
+  }
+
+  .circle.end {
+    right: 0;
+    top: -10px; /* Adjust to position above the line */
+  }
+
+  .activities-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 2rem;
+  }
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+
+
+    
+  }
+  .photo-card {
+    position: relative; /* Establece el contexto para posicionar elementos hijos */
+
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+      width: 300px; /* Ancho fijo */
+  height: 200px; /* Altura fija */
+  }
+  .photo-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+      object-fit: cover; /* Recorta la imagen para que se ajuste al contenedor */
+
+  }
+  .photo-card h3 {
+    position: absolute; /* Superpone el texto sobre la imagen */
+    bottom: 10px; /* Coloca el texto en la parte inferior */
+    margin: 0;
+    padding: 1rem;
+    font-size: 0.6rem;
+    background: #003366;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .photo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  /* Lightbox Styles */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lightbox-content {
+    max-height: 80vh;
+    width: auto;
+    max-width: 90%;
+    display: block;
+    margin: auto;
+  }
+  .lightbox-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+  }
+  .lightbox-content,
+  .lightbox-caption {
+    animation: zoom 0.6s;
+  }
+  @keyframes zoom {
+    from {
+      transform: scale(0);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  .lightbox-close:hover,
+  .lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .lightbox-prev,
+  .lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .lightbox-prev:hover,
+  .lightbox-next:hover {
+    color: #bbb;
+  }
+  .lightbox-prev {
+    left: 20px;
+  }
+  .lightbox-next {
+    right: 20px;
+  }
+
+  @keyframes slide-in-left {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slide-in-right {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+
+  @media (max-width: 768px) {
+
+
+.lightbox {
+display: none;
+position: fixed;
+z-index: 9999;
+padding-top: 60px;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0, 0, 0, 0.9);
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column; /* Cambiado a columna para la versión móvil */
+}
+
+.lightbox-content {
+max-height: 80vh;
+width: auto;
+max-width: 90%;
+display: block;
+margin: auto;
+}
+
+
+
+
+.lightbox-prev,
+.lightbox-next {
+top: 40%;
+
+}
+
+.timeline-section h2 {
+text-align: center;
+margin-bottom: 2rem;
+font-size: 2rem;
+color: #ff6600;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.timeline-item.right {
+    left: 39%;
+    transform: translateX(100%);
+    animation: slide-in-right 0.5s forwards;
+  }
+
+  .timeline-item.left {
+    left: -7%;
+  }
+
+}
+
+</style>
+
+<script>
+  let currentIndex = 0;
+  interface Photo {
+    src: string;
+    title: string;
+  }
+  let photos: Photo[] = [];
+
+  const photoDataElement = document.getElementById("photo-data");
+  if (photoDataElement) {
+    const dataPhotos = photoDataElement.getAttribute("data-photos");
+    if (dataPhotos) {
+      photos = JSON.parse(dataPhotos);
+    }
+  }
+
+  function openLightbox(index: number) {
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById(
+      "lightbox-img"
+    ) as HTMLImageElement;
+    const lightboxCaption = document.getElementById("lightbox-caption");
+
+    if (lightbox && lightboxImg && lightboxCaption) {
+      currentIndex = index;
+      lightbox.style.display = "flex";
+      lightboxImg.src = photos[currentIndex].src;
+      lightboxCaption.innerText = photos[currentIndex].title;
+    }
+  }
+
+  function closeLightbox() {
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox) {
+      lightbox.style.display = "none";
+    }
+  }
+
+  function prevPhoto() {
+    console.log("Previous photo");
+  }
+
+  function nextPhoto() {
+    currentIndex = (currentIndex + 1) % photos.length;
+    openLightbox(currentIndex);
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const photoCards = document.querySelectorAll(".photo-card");
+    const lightbox = document.getElementById("lightbox");
+
+    if (lightbox) {
+      lightbox.style.display = "none";
+    }
+
+    photoCards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const indexAttr = card.getAttribute("data-index");
+        if (indexAttr !== null) {
+          const index = parseInt(indexAttr, 10); // Aquí, 10 especifica que el número es en base 10
+          if (!isNaN(index)) {
+            openLightbox(index);
+          }
+        }
+      });
+    });
+
+    const lightboxClose = document.querySelector(".lightbox-close");
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", closeLightbox);
+    }
+
+    const lightboxPrev = document.querySelector(".lightbox-prev");
+    if (lightboxPrev) {
+      lightboxPrev.addEventListener("click", prevPhoto);
+    }
+
+    const lightboxNext = document.querySelector(".lightbox-next");
+    if (lightboxNext) {
+      lightboxNext.addEventListener("click", nextPhoto);
+    }
+
+    if (lightbox) {
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+    }
+  });
+</script>

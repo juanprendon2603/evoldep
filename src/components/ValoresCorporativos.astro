@@ -100,6 +100,44 @@
   }
 
   .strength a {
+  text-decoration: none; 
+  color: inherit; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.strength a h3 {
+  margin: 10px 0 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.strength a .icon-circle {
+  background-color: #ff6600;
+  border: 2px solid #fff;
+  width: 120px; 
+  height: 120px;
+  transition: all 0.3s ease;
+}
+
+.strength a .icon-circle:hover {
+  background-color: #003366;
+  border-color: #ff6600;
+  transform: scale(1.15);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.strength a .icon-circle i {
+  font-size: 2.5em;
+}
+
+.strength a:hover h3 {
+  color: #ff6600;
+}
+
+
+  .strength a {
     text-decoration: none; /* Quitar subrayado */
     color: inherit; /* Usar el mismo color del texto padre */
     display: flex;
