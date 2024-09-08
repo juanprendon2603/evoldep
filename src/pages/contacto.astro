@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
 <!doctype html>
@@ -241,15 +242,13 @@ import Navbar from "../components/Navbar.astro";
 
         <div class="contact-info">
           <p><strong>Teléfonos:</strong></p>
-          <p><i class="fa fa-phone"></i> (2) 263 8138</p>
-          <p><i class="fa fa-mobile"></i> (+57) 304 373 5676</p>
+          <p><i class="fa fa-phone"></i> (+57) 304 373 5676</p>
           <p><strong>Dirección:</strong></p>
           <p>
             <i class="fa fa-map-marker"></i> Calle 16 con Carrera 16ª, Barrio La
             Casilda, Florida, Valle del Cauca, Colombia
           </p>
           <p><strong>Correos Electrónicos:</strong></p>
-          <p><i class="fa fa-envelope"></i> info@evoldep.com</p>
           <p><i class="fa fa-envelope"></i> evoldep@gmail.com</p>
 
           <div class="social-icons">
@@ -265,11 +264,16 @@ import Navbar from "../components/Navbar.astro";
             <a href="https://tiktok.com/@tevoldep" target="_blank"
               ><img src="/images/tik-tok.png" alt="TikTok" /></a
             >
+            <a href="https://www.youtube.com/@evoldep/streams" target="_blank"
+            ><img src="/images/youtube.png" alt="Youtube" /></a
+          >
           </div>
         </div>
       </section>
     </main>
     <Footer />
+    <WhatsAppButton />
+
   </body>
 </html>
 

@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro";
 import Instagram from "../components/InstagramEmbed.astro";
 import Navbar from "../components/Navbar.astro";
 import TikTok from "../components/TiktokEmbed.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import YoutubeEmbed from "../components/YoutubeEmbed.astro";
 import { news } from "../data/news"; // Suponiendo que tienes un archivo de datos para las noticias
 ---
 
@@ -40,6 +42,10 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
           <Instagram />
           <TikTok />
         </div>
+        <div class="widget-row">
+        <YoutubeEmbed/>
+      </div>
+
 
         <section>
           <h2>NOTICIAS</h2>
@@ -74,6 +80,8 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
       </section>
     </main>
     <Footer />
+    <WhatsAppButton />
+
 
     <style>
     body {
@@ -119,6 +127,9 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
       .tiktok-embed {
         width: 100%;
       }
+
+
+      
    
    
       .news-column {
@@ -148,7 +159,7 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  background-color: #ff0000; /* Rojo para la noticia grande */
 }
 
 .news-row {
@@ -164,13 +175,29 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  background-color: #f9f9f9;
+  background-color: #ff6600; /* Naranja para las noticias pequeñas */
+  height: 80%;
+
 }
 
-.news-large img,
-.news-small img {
+.news-large img {
+  padding: 1rem; /* Ajusta el valor según lo necesites */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+
   width: 100%;
   height: auto;
+}
+
+.news-content h3,
+.news-content p {
+  color: #ffffff; /* Blanco para el título y la descripción */
+}
+.news-small img {
+
+  padding: 1rem; /* Ajusta el valor según lo necesites */
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  width: 100%;
+  height: 50%;
 }
 
 @media (max-width: 768px) {
@@ -228,6 +255,11 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
       width: 90%;
       text-align: center;
     }
+
+    .news-small {
+  height: auto;
+
+}
   }
 
   h2 {

@@ -1,0 +1,95 @@
+---
+// src/components/YoutubeEmbed.astro
+const API_KEY = 'AIzaSyBsaSaUeKE8-E2ycJy4YN_9Lx4qgMnpZE4';
+const CHANNEL_ID = 'UC3nBBNhOGNWVPldGYT0i47w';
+
+let videoFrame: string = '';
+
+// Función para manejar errores de la API
+function handleError(error: unknown) {
+  if (error instanceof Error) {
+    console.error('Error al obtener el video:', error.message);
+  } else {
+    console.error('Error desconocido al obtener el video:', error);
+  }
+}
+
+// Obtener el último video del canal
+async function fetchLatestVideo() {
+  try {
+    const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&order=date&part=snippet&type=video&maxResults=1`);
+    
+    if (!response.ok) {
+      throw new Error('Error en la respuesta de la API');
+    }
+    
+    const data = await response.json();
+    if (data.items && data.items.length > 0) {
+      const videoId = data.items[0].id.videoId;
+      videoFrame = `https://www.youtube.com/embed/${videoId}`;
+    } else {
+      handleError(new Error('No se encontraron videos.'));
+    }
+  } catch (error) {
+    handleError(error);
+  }
+}
+
+await fetchLatestVideo();
+---
+
+
+
+<div class="widget-container">
+  <a href="https://www.youtube.com/@evoldep" target="_blank"><h3>Ultimo video subido</h3></a>
+    <div id="latest-video" data-video-frame={videoFrame}></div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const videoContainer = document.getElementById('latest-video');
+        if (videoContainer) {
+          const videoFrame = videoContainer.getAttribute('data-video-frame');
+          if (videoFrame) {
+            videoContainer.innerHTML = `<iframe width="100%" height="500px" src="${videoFrame}" 
+              frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen></iframe>`;
+          } else {
+            console.error('No se encontró el atributo data-video-frame o está vacío.');
+          }
+        } else {
+          console.error('Elemento con id "latest-video" no encontrado.');
+        }
+      });
+    </script>
+
+</div>
+
+<style>
+  .widget-container {
+    width: 60%;
+    overflow: hidden;
+  }
+  a {
+  text-decoration: none;
+}
+
+  h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #ff6600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  }
+
+  @media (max-width: 768px) {
+    .widget-container {
+    width: 90%;
+
+    overflow: hidden;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+  }
+</style>
+

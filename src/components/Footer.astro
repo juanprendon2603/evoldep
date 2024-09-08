@@ -29,7 +29,7 @@
         <div >
         <p><strong>Enlaces Oficiales</strong></p>
         <a href="https://imderflorida.gov.co">
-          <img src="/images/footer/imder.jpg" alt="Club Deportivo Real Tolima" class="affiliate-logo">
+          <img src="/images/footer/imder.png" alt="Club Deportivo Real Tolima" class="affiliate-logo">
         </a> 
         <a href="https://www.valledelcauca.gov.co">
           <img src="/images/footer/gobernacion.png" alt="Gobernación del Valle del Cauca" class="affiliate-logo">
@@ -200,20 +200,38 @@
     text-align: center;
   }
 
-
   @media (max-width: 768px) {
-    .footer-row {
-      flex-direction: column; /* Cambia la dirección del flex a columna en pantallas pequeñas */
-      align-items: center; /* Centra los elementos verticalmente */
-    }
+  .footer-row {
+    flex-direction: column; /* Cambia la dirección del flex a columna en pantallas pequeñas */
+    align-items: center; /* Centra los elementos verticalmente */
+  }
 
-    .footer .logo-grande {
+  
+
+  .footer .logo-grande {
     max-width: 80px;
   }
-    .footer .navigation,
-    .footer .contact {
-      text-align: center; /* Centra el texto en pantallas pequeñas */
-      margin-bottom: 1rem;
-    }
+
+  .footer .navigation,
+  .footer .contact {
+    text-align: center; /* Centra el texto en pantallas pequeñas */
+    margin-bottom: 1rem;
   }
+
+  .footer .image-container-enlaces {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+    justify-content: center;
+  }
+
+  .footer .image-container-enlaces a {
+    flex: 0 0 50%; /* Cada enlace ocupará exactamente el 50% del contenedor */
+    max-width: 50%; /* Limita el ancho máximo al 50% */
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+  
 </style>
