@@ -24,12 +24,20 @@ const photos: Photo[] = [
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Actividades y Torneos - Club Evolución Deportiva</title>
+    <title>2024 - Actividades y Torneos</title>
     <link rel="icon" type="image/png" href="/images/logo.png" />
   </head>
   <body>
     <Navbar />
     <main>
+      <div class="header">
+        <a href="/actividades" class="back-button">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+        </a>
+      </div>
     
       <div class="section-container">
         <div class="section" id="eventos">
@@ -94,6 +102,37 @@ const photos: Photo[] = [
   section {
     margin-bottom: 2rem;
   }
+
+  .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: #003366;
+  border-radius: 50%;
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.back-button:hover {
+  background-color: #FF7F50; /* Naranja */
+  transform: scale(1.1);
+}
+
+.back-button svg {
+  width: 24px;
+  height: 24px;
+}
 
   .timeline-section h2,
   .activities-section h2 {

@@ -1,4 +1,3 @@
---- const currentPath = Astro.url.pathname; const isActive = (path: string) => currentPath === path ? 'active' : ''; ---
 
 <!DOCTYPE html>
 <html lang="es">
@@ -35,12 +34,13 @@
 		<div class="container">
 			<a href="/" class="logo-link"> <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo"> <span>Club Evolución Deportiva</span> </a>
 			<ul class="nav-links">
-				<li><a href="/inicio" class={isActive( '/inicio')}>INICIO</a></li>
-				<li><a href="/nosotros" class={isActive( '/nosotros')}>NOSOTROS</a></li>
-				<li><a href="/servicios" class={isActive( '/servicios')}>SERVICIOS</a></li>
-				<li><a href="/actividades" class={isActive( '/actividades')}>ACTIVIDADES Y TORNEOS</a></li>
-				<li><a href="/noticias" class={isActive( '/noticias')}>NOTICIAS Y DESTACADOS</a></li>
-				<li><a href="/contacto" class={isActive( '/contacto')}>CONTACTENOS</a></li>
+				<li><a href="/inicio">INICIO</a></li>
+<li><a href="/nosotros">NOSOTROS</a></li>
+<li><a href="/servicios">SERVICIOS</a></li>
+<li><a href="/actividades">ACTIVIDADES Y TORNEOS</a></li>
+<li><a href="/noticias">NOTICIAS Y DESTACADOS</a></li>
+<li><a href="/contacto">CONTACTENOS</a></li>
+
 			</ul>
      
 		</div>
@@ -52,12 +52,13 @@
 			<i class="fa fa-times"></i>
 		</div>
 		<ul class="nav-links">
-			<li><a href="/inicio" class={isActive( '/inicio')}>INICIO</a></li>
-				<li><a href="/nosotros" class={isActive( '/nosotros')}>NOSOTROS</a></li>
-				<li><a href="/servicios" class={isActive( '/servicios')}>SERVICIOS</a></li>
-				<li><a href="/actividades" class={isActive( '/actividades')}>ACTIVIDADES Y TORNEOS</a></li>
-				<li><a href="/noticias" class={isActive( '/noticias')}>NOTICIAS Y DESTACADOS</a></li>
-				<li><a href="/contacto" class={isActive( '/contacto')}>CONTACTENOS</a></li>
+			<li><a href="/inicio">INICIO</a></li>
+<li><a href="/nosotros">NOSOTROS</a></li>
+<li><a href="/servicios">SERVICIOS</a></li>
+<li><a href="/actividades">ACTIVIDADES Y TORNEOS</a></li>
+<li><a href="/noticias">NOTICIAS Y DESTACADOS</a></li>
+<li><a href="/contacto">CONTACTENOS</a></li>
+
 		</ul>
     
 	</div>
@@ -120,6 +121,18 @@
 
 		
 	</script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+		  const currentPath = window.location.pathname;
+		  const navLinks = document.querySelectorAll('.nav-links a');
+	  
+		  navLinks.forEach(link => {
+			if (link.getAttribute('href') === currentPath) {
+			  link.classList.add('active');
+			}
+		  });
+		});
+	  </script>
 </body>
 </html>
 
@@ -229,6 +242,11 @@
 	    cursor: pointer;
 	    z-index: 1200;
 	  }
+
+	  .nav-links a.active {
+  color: #cc5200;
+  font-weight: bold; /* Esto es opcional para darle más énfasis */
+}
 	
 	  @media (max-width: 768px) {
 	    .top-bar {
