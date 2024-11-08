@@ -60,7 +60,11 @@ const photos3: Photo[] = [
   { src: "/images/actividades/2018/41.jpg", title: "Julio 2018- Categoria 2006 canchas del parque bosque municipal Florida" },
   { src: "/images/actividades/2018/42.jpg", title: "24 Junio 2018- De izquierda a derecha. Presidente Diego Idrobo, formador Alex Salgado, Formador Juan Mancilla y formador Andres Viafara" },
   
+  
 ];
+
+const totalPhotos = photos.concat(photos2.concat(photos3));
+
 ---
 
 <!doctype html>
@@ -112,11 +116,6 @@ const photos3: Photo[] = [
         }
       </div>
 
-      <div
-      id="photo-data"
-      data-photos={JSON.stringify(photos)}
-      style="display: none;"
-    >
     </div>
 
       <div class="section-container">
@@ -138,7 +137,7 @@ const photos3: Photo[] = [
           photos2.map((photo: Photo, index: number) => (
             <div
               class="photo-card"
-              data-index={index}
+              data-index={index + photos.length}
               data-src={photo.src}
               data-title={photo.title}
             >
@@ -148,13 +147,6 @@ const photos3: Photo[] = [
           ))
         }
       </div>
-
-      <div
-      id="photo-data"
-      data-photos={JSON.stringify(photos2)}
-      style="display: none;"
-    >
-    </div>
 
 
       <div class="section-container">
@@ -180,7 +172,7 @@ const photos3: Photo[] = [
           photos3.map((photo: Photo, index: number) => (
             <div
               class="photo-card"
-              data-index={index}
+              data-index={index + photos.length + photos2.length}
               data-src={photo.src}
               data-title={photo.title}
             >
@@ -194,7 +186,7 @@ const photos3: Photo[] = [
 
       <div
         id="photo-data"
-        data-photos={JSON.stringify(photos3)}
+        data-photos={JSON.stringify(totalPhotos)}
         style="display: none;"
       >
       </div>

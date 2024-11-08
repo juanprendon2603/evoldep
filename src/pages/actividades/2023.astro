@@ -9,14 +9,60 @@ interface Photo {
 }
 
 const photos: Photo[] = [
-  { src: "/images/actividades/2016/1.jpg", title: "Diciembre 2016- Segundo lugar categoria Sub10 Copa Atlas" },
-  { src: "/images/actividades/2016/2.jpg", title: "Diciembre 2016- Tercer lugar categoria Sub8 Copa Atlas CP" },
-  { src: "/images/actividades/2016/3.jpg", title: "Diciembre 2016 Tercer lugar categoria Sub10 Copa Atlas" },
-  { src: "/images/actividades/2016/4.jpg", title: "Octubre 2016- Categoría Sub8 segunda fase copa Atlas 2016" },
-  { src: "/images/actividades/2016/5.jpg", title: "Septiembre 2016- Categoría Sub8 fase inicial copa Atlas 2016" },
-  { src: "/images/actividades/2016/6.jpg", title: "Noviembre 2016- Categoría Sub8 fase final copa Atlas 2016" },
+  { src: "/images/actividades/2023/1.jpg", title: "" },
+  { src: "/images/actividades/2023/2.jpg", title: "" },
+  { src: "/images/actividades/2023/3.jpg", title: "" },
+  { src: "/images/actividades/2023/4.jpg", title: "" },
+  { src: "/images/actividades/2023/5.jpg", title: "" },
+  { src: "/images/actividades/2023/6.jpg", title: "" },
+  { src: "/images/actividades/2023/7.jpg", title: "" },
+  { src: "/images/actividades/2023/8.jpg", title: "" },
+  { src: "/images/actividades/2023/9.jpg", title: "" },
+  { src: "/images/actividades/2023/10.jpg", title: "" },
+  { src: "/images/actividades/2023/11.jpg", title: "" },
+  { src: "/images/actividades/2023/12.jpg", title: "" },
+  { src: "/images/actividades/2023/13.jpg", title: "" },
+  { src: "/images/actividades/2023/14.jpg", title: "" },
+  { src: "/images/actividades/2023/15.jpg", title: "" },
+  { src: "/images/actividades/2023/16.jpg", title: "" },
+  { src: "/images/actividades/2023/17.jpg", title: "" },
+  { src: "/images/actividades/2023/18.jpg", title: "" },
+  { src: "/images/actividades/2023/19.jpg", title: "" },
+  { src: "/images/actividades/2023/20.jpg", title: "" },
+  { src: "/images/actividades/2023/21.jpg", title: "" },
+  { src: "/images/actividades/2023/22.jpg", title: "" },
+  { src: "/images/actividades/2023/23.jpg", title: "" },
+  { src: "/images/actividades/2023/24.jpg", title: "" },
+  { src: "/images/actividades/2023/25.jpg", title: "" },
+  { src: "/images/actividades/2023/26.jpg", title: "" },
+  { src: "/images/actividades/2023/27.jpg", title: "" },
+  { src: "/images/actividades/2023/28.jpg", title: "" },
+  { src: "/images/actividades/2023/29.jpg", title: "" },
+  { src: "/images/actividades/2023/30.jpg", title: "" },
+  { src: "/images/actividades/2023/31.jpg", title: "" },
+  { src: "/images/actividades/2023/32.jpg", title: "" },
+  { src: "/images/actividades/2023/33.jpg", title: "" },
   
 ];
+
+const photos2: Photo[] = [
+  { src: "/images/actividades/2023/34.jpg", title: "" },
+  { src: "/images/actividades/2023/35.jpg", title: "" },
+  { src: "/images/actividades/2023/36.jpg", title: "" },
+  { src: "/images/actividades/2023/37.jpg", title: "" },
+  { src: "/images/actividades/2023/38.jpg", title: "" },
+  { src: "/images/actividades/2023/39.jpg", title: "" },
+  { src: "/images/actividades/2023/40.jpg", title: "" },
+  { src: "/images/actividades/2023/41.jpg", title: "" },
+  { src: "/images/actividades/2023/42.jpg", title: "" },
+  { src: "/images/actividades/2023/43.jpg", title: "" },
+  { src: "/images/actividades/2023/44.jpg", title: "" },
+  { src: "/images/actividades/2023/45.jpg", title: "" },
+  
+];
+
+const totalPhotos = photos.concat(photos2);
+
 ---
 
 <!doctype html>
@@ -41,9 +87,8 @@ const photos: Photo[] = [
     
       <div class="section-container">
         <div class="section" id="eventos">
-          <h2>2016</h2>
+          <h2>COPA ORIENTE 2023</h2>
           <p>
-            Nuestro club realizo un esfuerzo económico enorme para desplazarse con las categorías sub8 y sub10 del año 2016 para que participaran en el reconocido torneo de la ciudad de Cali en donde ocupamos el tercer y segundo lugar respectivamente de la X Copa Atlas (septiembre a diciembre del año 2016), llevada a cabo en la sede deportiva Camp Nou Norte.
           </p>
       
         </div>
@@ -63,9 +108,33 @@ const photos: Photo[] = [
           ))
         }
       </div>
+
+      <div class="section-container">
+        <div class="section" id="eventos">
+          <h2>DESPEDIDA FIN DE AÑO 2023</h2>
+          <p>
+          </p>
+      
+        </div>
+      </div>
+      <div class="gallery">
+        {
+          photos2.map((photo: Photo, index: number) => (
+            <div
+              class="photo-card"
+              data-index={index + photos.length}
+              data-src={photo.src}
+              data-title={photo.title}
+            >
+              <img src={photo.src} alt={photo.title} />
+              <h3>{photo.title}</h3>
+            </div>
+          ))
+        }
+      </div>
       <div
         id="photo-data"
-        data-photos={JSON.stringify(photos)}
+        data-photos={JSON.stringify(totalPhotos)}
         style="display: none;"
       >
       </div>

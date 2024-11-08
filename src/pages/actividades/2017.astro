@@ -71,6 +71,10 @@ const photos3: Photo[] = [
   { src: "/images/actividades/2017/52.jpg", title: "17 Septimbre 2017- Evodep Sub11 vs Astros Gorgona por Copa Oriente" },
   
 ];
+
+const totalPhotos = photos.concat(photos2.concat(photos3));
+
+
 ---
 
 <!doctype html>
@@ -150,7 +154,7 @@ const photos3: Photo[] = [
           photos2.map((photo: Photo, index: number) => (
             <div
               class="photo-card"
-              data-index={index}
+              data-index={index + photos.length}
               data-src={photo.src}
               data-title={photo.title}
             >
@@ -183,7 +187,7 @@ const photos3: Photo[] = [
           photos3.map((photo: Photo, index: number) => (
             <div
               class="photo-card"
-              data-index={index}
+              data-index={index + photos.length + photos2.length}
               data-src={photo.src}
               data-title={photo.title}
             >
@@ -197,7 +201,7 @@ const photos3: Photo[] = [
 
       <div
         id="photo-data"
-        data-photos={JSON.stringify(photos)}
+        data-photos={JSON.stringify(totalPhotos)}
         style="display: none;"
       >
       </div>

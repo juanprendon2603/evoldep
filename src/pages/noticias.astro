@@ -7,6 +7,7 @@ import TikTok from "../components/TiktokEmbed.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 import YoutubeEmbed from "../components/YoutubeEmbed.astro";
 import { news } from "../data/news"; // Suponiendo que tienes un archivo de datos para las noticias
+
 ---
 
 <!doctype html>
@@ -62,17 +63,20 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
             
             <!-- Tres noticias más pequeñas abajo -->
             <div class="news-row">
-              {news.slice(1, 4).map((item) => (
+              {news.slice(1, 6).map((item) => (
                 <div class="news-small">
                   <img src={item.image} alt={item.title} />
                   <div class="news-content">
                     <h3>{item.title}</h3>
                     <p>{item.description}</p>
+                    <!-- Renderizamos el contenido HTML del campo content -->
+                    <astro:html content={item.content} />
                     <a href={`/noticias/${item.id}`} class="btn">Ver Más</a>
                   </div>
                 </div>
               ))}
             </div>
+            
           </div>
           
           </div>

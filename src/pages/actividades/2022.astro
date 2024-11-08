@@ -9,14 +9,26 @@ interface Photo {
 }
 
 const photos: Photo[] = [
-  { src: "/images/actividades/2016/1.jpg", title: "Diciembre 2016- Segundo lugar categoria Sub10 Copa Atlas" },
-  { src: "/images/actividades/2016/2.jpg", title: "Diciembre 2016- Tercer lugar categoria Sub8 Copa Atlas CP" },
-  { src: "/images/actividades/2016/3.jpg", title: "Diciembre 2016 Tercer lugar categoria Sub10 Copa Atlas" },
-  { src: "/images/actividades/2016/4.jpg", title: "Octubre 2016- Categoría Sub8 segunda fase copa Atlas 2016" },
-  { src: "/images/actividades/2016/5.jpg", title: "Septiembre 2016- Categoría Sub8 fase inicial copa Atlas 2016" },
-  { src: "/images/actividades/2016/6.jpg", title: "Noviembre 2016- Categoría Sub8 fase final copa Atlas 2016" },
-  
+  { src: "/images/actividades/2022/1.jpg", title: "" },
+  { src: "/images/actividades/2022/2.jpg", title: "" },
+  { src: "/images/actividades/2022/3.jpg", title: "" },
 ];
+
+
+const photos2: Photo[] = [
+{ src: "/images/actividades/2022/4.jpg", title: "" },
+  { src: "/images/actividades/2022/5.jpg", title: "" },
+  { src: "/images/actividades/2022/6.jpg", title: "" },
+  { src: "/images/actividades/2022/7.jpg", title: "" },
+  { src: "/images/actividades/2022/8.jpg", title: "" },
+  { src: "/images/actividades/2022/9.jpg", title: "" },
+  { src: "/images/actividades/2022/10.jpg", title: "" },
+  { src: "/images/actividades/2022/11.jpg", title: "" },
+  { src: "/images/actividades/2022/12.jpg", title: "" },
+];
+
+const totalPhotos = photos.concat(photos2);
+
 ---
 
 <!doctype html>
@@ -41,9 +53,8 @@ const photos: Photo[] = [
     
       <div class="section-container">
         <div class="section" id="eventos">
-          <h2>2016</h2>
+          <h2>COPA DEPARTAMENTAL LIGA 2022</h2>
           <p>
-            Nuestro club realizo un esfuerzo económico enorme para desplazarse con las categorías sub8 y sub10 del año 2016 para que participaran en el reconocido torneo de la ciudad de Cali en donde ocupamos el tercer y segundo lugar respectivamente de la X Copa Atlas (septiembre a diciembre del año 2016), llevada a cabo en la sede deportiva Camp Nou Norte.
           </p>
       
         </div>
@@ -63,9 +74,35 @@ const photos: Photo[] = [
           ))
         }
       </div>
+
+
+      <div class="section-container">
+        <div class="section" id="eventos">
+          <h2>COPA SARMIENTO 2022</h2>
+          <p>
+          </p>
+      
+        </div>
+      </div>
+      <div class="gallery">
+        {
+          photos2.map((photo: Photo, index: number) => (
+            <div
+              class="photo-card"
+              data-index={index + photos.length}
+              data-src={photo.src}
+              data-title={photo.title}
+            >
+              <img src={photo.src} alt={photo.title} />
+              <h3>{photo.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+
       <div
         id="photo-data"
-        data-photos={JSON.stringify(photos)}
+        data-photos={JSON.stringify(totalPhotos)}
         style="display: none;"
       >
       </div>

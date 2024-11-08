@@ -34,12 +34,12 @@
 		<div class="container">
 			<a href="/" class="logo-link"> <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo"> <span>Club Evolución Deportiva</span> </a>
 			<ul class="nav-links">
-				<li><a href="/inicio">INICIO</a></li>
-<li><a href="/nosotros">NOSOTROS</a></li>
-<li><a href="/servicios">SERVICIOS</a></li>
-<li><a href="/actividades">ACTIVIDADES Y TORNEOS</a></li>
-<li><a href="/noticias">NOTICIAS Y DESTACADOS</a></li>
-<li><a href="/contacto">CONTACTENOS</a></li>
+				<li><a href="/inicio/">INICIO</a></li>
+<li><a href="/nosotros/">NOSOTROS</a></li>
+<li><a href="/servicios/">SERVICIOS</a></li>
+<li><a href="/actividades/">ACTIVIDADES Y TORNEOS</a></li>
+<li><a href="/noticias/">NOTICIAS Y DESTACADOS</a></li>
+<li><a href="/contacto/">CONTACTENOS</a></li>
 
 			</ul>
      
@@ -52,12 +52,12 @@
 			<i class="fa fa-times"></i>
 		</div>
 		<ul class="nav-links">
-			<li><a href="/inicio">INICIO</a></li>
-<li><a href="/nosotros">NOSOTROS</a></li>
-<li><a href="/servicios">SERVICIOS</a></li>
-<li><a href="/actividades">ACTIVIDADES Y TORNEOS</a></li>
-<li><a href="/noticias">NOTICIAS Y DESTACADOS</a></li>
-<li><a href="/contacto">CONTACTENOS</a></li>
+			<li><a href="/inicio/">INICIO</a></li>
+<li><a href="/nosotros/">NOSOTROS</a></li>
+<li><a href="/servicios/">SERVICIOS</a></li>
+<li><a href="/actividades/">ACTIVIDADES Y TORNEOS</a></li>
+<li><a href="/noticias/">NOTICIAS Y DESTACADOS</a></li>
+<li><a href="/contacto/">CONTACTENOS</a></li>
 
 		</ul>
     
@@ -119,20 +119,22 @@
   }
 });
 
+
+document.addEventListener('DOMContentLoaded', function() {
+  const currentPath = window.location.pathname;
+  console.log("Ruta actual:", currentPath); // Para verificar en la consola
+  const navLinks = document.querySelectorAll('.nav-links a');
+  
+  navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPath) {
+      link.classList.add('active');
+    }
+  });
+});
+
+
 		
 	</script>
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-		  const currentPath = window.location.pathname;
-		  const navLinks = document.querySelectorAll('.nav-links a');
-	  
-		  navLinks.forEach(link => {
-			if (link.getAttribute('href') === currentPath) {
-			  link.classList.add('active');
-			}
-		  });
-		});
-	  </script>
 </body>
 </html>
 
@@ -218,6 +220,8 @@
 	  }
 	  .nav-links a:hover {
 	    color: #cc5200;
+		font-weight: bold; /* Esto es opcional para darle más énfasis */
+
 	  }
 	  .nav-links a.active {
 	    color: #cc5200;

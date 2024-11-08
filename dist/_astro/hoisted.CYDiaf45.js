@@ -1,0 +1,1 @@
+import"./hoisted.BJpjTFmH.js";document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".faq-question").forEach(t=>{t.addEventListener("click",()=>{const e=t.nextElementSibling,n=document.querySelector(".faq-answer[style='display: block;']");n&&n!==e&&(n.style.display="none"),e&&(e.style.display=e.style.display==="block"?"none":"block")})})});

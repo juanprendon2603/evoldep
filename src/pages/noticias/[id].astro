@@ -55,7 +55,7 @@ const relatedNews = getNews()
                 />
                 <div class="news-text">
                   <h1>{newsItem.title}</h1>
-                  <p>{newsItem.content}</p>
+                  <div set:html={newsItem.content}></div>
                 </div>
               </>
             ) : (
