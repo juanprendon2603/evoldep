@@ -2,6 +2,36 @@
 export const news = [
   {
     id: "1",
+    title: "🏆 ¡SOMOS CAMPEONES POR PRIMERA VEZ EN LA HISTORIA!",
+    description: "🥺 ¡Llego la primera de muchas! ",
+    image: "/images/noticias/campeones.jpg",
+    content: `
+    El equipo ha alcanzado una hazaña histórica al coronarse campeones por primera vez en la Copa Oriente 2024, torneo departamental de la Liga Vallecaucana de Fútbol. ¡Esto marca el inicio de una nueva era llena de éxitos para el club! <br><br>
+    Nuestra entidad con su categoría sub-14, clasifico en el todos contra todos como mejor 4to con 31 puntos, al finalizar 14 juegos, en los cuartos de final supero al CD Chelsea Florida 3x0, en semis al CD Semilleros por la vía de los penales después de un 0x0 en el tiempo regular, y el pasado sábado 30 de noviembre de 2024, nos alzamos con el trofeo de campeones, ante el C.D. Atlético Americano Tarragona, imponiéndonos 2x0 en el tiempo reglamentario, con goles de nuestro capitán Jorge Andrés Palacios Marinez, quien también fue el máximo artillero del torneo con 17 tantos en 17 juegos,  llevándose los reflectores en la gran final.<br><br>
+    Este título no solo significa un gran honor para los jugadores, demostrando su fuerza y unidad, sino que también les da el pase a la Supercopa de Campeones de LiFutbolValle, a celebrarse en Ginebra Valle en el primer semestre de 2025. Sin duda, un futuro prometedor para el club. ⭐️ Entramos en la historia ⚽️<br><br>
+    🚀 ¡Felicidades a todo el staff técnico del Club Evolución Deportiva y a la familia "tigrillos"! 🐯⚽️ ¡Lo lograron juntos y siguen soñando en grande!<br><br>
+    #ligavallecaucanadefutbol #ZonaOriente #valledelcauca #futbol #soccer #escueladefutbol #Evoldep #FloridaValle #ClubDeportivo #Club #Evolución #ClubFormativo #SoyFelino #OrgulloFloridano #Evolutivo #LigaVallecaucanaDeFútbol #LiFútbolValle #escueladefutbolparaniños #EvolucionDeportiva #Tigrillos #Evolutivos #Evoldinos
+    `
+  },
+  {
+    id: "8",
+    title: "✳️ Citación a temporada 2025",
+    description: "🗃️ Categorías de deportistas nacidos en los años: 2009 a 2014",
+    image: "/images/noticias/regreso.jpeg",
+    content: `
+    📅 Miércoles 15 enero 2024<br>
+    🥅 Cancha la cabaña<br>
+    📍 Florida - Valle<br>
+    🕞 3:30 p.m.<br>
+    📈 Pertenece a nuestro programa competitivo:<br>
+    🎖️ DURANTE EL MES DE ENERO 2025, ESTAREMOS EN OBSERVACIONES Y ENTREGAREMOS BECAS A DEPORTISTAS NUEVOS. (Asistir con fotocopia de documento de identidad).<br>
+    📞 Mas información al whatsapp: 304 3735676<br>
+    🌐 Visitanos en: www.evoldep.com<br>
+    #Evoldep #FloridaValle #ClubDeportivo #Club #Evolución #ClubFormativo #SoyFelino #OrgulloFloridano #Evolutivo #CopaOriente #LigaVallecaucanaDeFútbol #LiFútbolValle
+    `
+  },
+  {
+    id: "7",
     title: "Transmisiones en vivo de partidos en YouTube",
     description: "¡No te pierdas los partidos del Club Evolución Deportiva transmitidos en vivo por nuestro canal de YouTube!",
     image: "/images/noticias/youtube.png",

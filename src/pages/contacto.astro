@@ -1,6 +1,8 @@
 ---
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar.astro";
+import Map from "../components/MapEmbed.astro";
+import MapEmbedCabana from "../components/MapEmbedCabana.astro";
 import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
@@ -25,12 +27,18 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       background-color: #ffffff;
       background-attachment: fixed;
       background-size: cover;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23FFFFFF' stroke-width='0.1' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23fcfcfc' href='%23s' y='2'/%3E%3Cuse fill='%23fcfcfc' href='%23s' x='1' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s' x='2' y='2'/%3E%3Cuse fill='%23fafafa' href='%23s'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='2'/%3E%3Cuse fill='%23f7f7f7' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f5f5f5'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23f2f2f2'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23FFFFFF'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%23efefef'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23F60'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
     }
   
     main {
       padding: 6rem 1rem 2rem 1rem; /* Ajustar el padding-top para dar espacio al navbar */
     }
+
+    .ritgg-side {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* Espacio entre secciones */
+  max-width: 800px;
+}
   
     .info h2 {
       text-align: center;
@@ -40,18 +48,16 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
     }
   
-    .locations-section {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
+    .locations-section .container {
+  display: flex; /* Cambiar a un diseño flexible */
+  flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan si no hay suficiente espacio */
+  justify-content: center; /* Alinear las tarjetas al centro */
+  gap: 4rem; /* Espaciado entre tarjetas */
+}
   
     .location-card {
-      width: 100%;
-      max-width: 300px;
-      background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
-      padding: 2rem;
+            background: linear-gradient(to bottom, #003366 0%, #66ccff 100%);
+      padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       text-align: center;
@@ -68,17 +74,9 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       background: linear-gradient(to bottom, #66ccff 0%, #003366 100%);
     }
   
-    .location-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1rem;
-    }
+   
   
-    .location-icon img {
-      width: 60px;
-      height: 60px;
-    }
+  
   
     .location-card h3 {
       font-size: 1.5rem;
@@ -86,20 +84,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       margin-bottom: 1rem;
     }
   
-    .location-button {
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      background-color: #ff6600;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
   
-    .location-button:hover {
-      background-color: #cc5200;
-    }
   
     .contact-section {
       display: flex;
@@ -110,25 +95,21 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
     }
   
     .contact-form {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 600px;
-      width: 100%;
-      flex: 1;
-    }
-  
-    .contact-info {
-      background: white;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      max-width: 400px;
-      width: 100%;
-      flex: 1;
-      text-align: center;
-    }
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+.contact-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+}
   
     .contact-info p {
       font-size: 1rem;
@@ -187,47 +168,70 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
       height: 100%;
       object-fit: contain;
     }
+
+    
+
+      
+    .sede {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin: 20px 0;
+  padding: 15px; /* Reducir el padding */
+  max-width: 300px; /* Ajustar el ancho máximo */
+  max-height: 400px; /* Ajustar la altura máxima si es necesario */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sede {
+  height: auto; /* Permite ajustar según el contenido */
+  max-height: 300px; /* Límites para evitar que sean muy largas */
+  overflow: hidden; /* Oculta el contenido que se extienda más allá del contenedor */
+}
+
+        .sede:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .sede-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .sede-address {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .sede iframe, /* Para los mapas incrustados que usan <iframe> */
+.sede map-component-class { /* Reemplaza "map-component-class" con la clase específica si tu componente tiene una */
+  height: 100px; /* Ajusta esta altura según lo que prefieras */
+  max-height: 100px; /* Asegura que no crezca más allá de este valor */
+  border-radius: 8px; /* Opcional: para un diseño más uniforme */
+}
+       
   </style>
   
   <body>
     <Navbar />
     <main>
-      <section class="info">
-        <h2>SEDES</h2>
-      </section>
-
-      <section class="locations-section">
-        <div class="location-card">
-          <div class="location-icon">
-            <img src="/images/map.png" alt="Map" />
-          </div>
-          <h3>PARQUE BOSQUE MUNICIPAL</h3>
-          <a
-            href="/sedes/florida-parque-bosque-municipal"
-            class="location-button">Ver ubicación</a
-          >
-        </div>
-        <div class="location-card">
-          <div class="location-icon">
-            <img src="/images/map.png" alt="Map" />
-          </div>
-          <h3>LA CABAÑA</h3>
-          <a href="/sedes/florida-cancha-la-cabana" class="location-button"
-            >Ver ubicación</a
-          >
-        </div>
-      </section>
+     
 
       <!-- Formulario de contacto -->
       <section class="contact-section">
-        <form class="contact-form">
+        <form class="contact-form" method="POST"    action="https://formspree.io/f/mdkkyovv"
+
+        >
           <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input type="text" id="nombre" name="nombre" required />
           </div>
           <div class="form-group">
             <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo" required />
+            <input type="email" id="correo" name="email" required />
           </div>
           <div class="form-group">
             <label for="telefono">Teléfono:</label>
@@ -239,37 +243,60 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
           </div>
           <button type="submit">Enviar</button>
         </form>
-
-        <div class="contact-info">
-          <p><strong>Teléfonos:</strong></p>
-          <p><i class="fa fa-phone"></i> (+57) 304 373 5676</p>
-          <p><strong>Dirección:</strong></p>
-          <p>
-            <i class="fa fa-map-marker"></i> Calle 16 con Carrera 16ª, Barrio La
-            Casilda, Florida, Valle del Cauca, Colombia
-          </p>
-          <p><strong>Correos Electrónicos:</strong></p>
-          <p><i class="fa fa-envelope"></i> evoldep@gmail.com</p>
-
-          <div class="social-icons">
-            <a href="https://facebook.com/evoldep" target="_blank"
-              ><img src="/images/facebook.png" alt="Facebook" /></a
-            >
-            <a href="https://x.com/evoldep" target="_blank"
-              ><img src="/images/x.png" alt="Twitter" /></a
-            >
-            <a href="https://instagram.com/evoldep" target="_blank"
-              ><img src="/images/instagram.png" alt="Instagram" /></a
-            >
-            <a href="https://tiktok.com/@tevoldep" target="_blank"
-              ><img src="/images/tik-tok.png" alt="TikTok" /></a
-            >
-            <a href="https://www.youtube.com/@evoldep/streams" target="_blank"
-            ><img src="/images/youtube.png" alt="Youtube" /></a
-          >
+        
+        <div class="ritgg-side">
+          <section class="locations-section">
+            <div class="container">
+      
+              <div class="sede">
+                  <div class="sede-title">Parque Bosque</div>
+                  <div class="sede-address">Calle 6 No 6-51 parque bosque municipal, Florida - Valle, Colombia</div>
+                  <Map />
+    
+              </div>
+      
+              <div class="sede">
+                  <div class="sede-title">Cancha la Cabaña</div>
+                  <div class="sede-address">Calle 4 con carrera 13 barrio la cabaña, Florida - Valle, Colombia</div>
+                  <MapEmbedCabana />
+                </div>
+      
+              <!-- Agregar más sedes si es necesario -->
+      
           </div>
+          </section>
+          <div class="contact-info">
+            <p><strong>Teléfonos:</strong></p>
+            <p><i class="fa fa-phone"></i> (+57) 304 373 5676</p>
+           
+            <p><strong>Correo Electrónico:</strong></p>
+            <p><i class="fa fa-envelope"></i> evoldep@gmail.com</p>
+  
+            <div class="social-icons">
+              <a href="https://facebook.com/evoldep" target="_blank"
+                ><img src="/images/facebook.png" alt="Facebook" /></a
+              >
+              <a href="https://x.com/evoldep" target="_blank"
+                ><img src="/images/x.png" alt="Twitter" /></a
+              >
+              <a href="https://instagram.com/evoldep" target="_blank"
+                ><img src="/images/instagram.png" alt="Instagram" /></a
+              >
+              <a href="https://tiktok.com/@tevoldep" target="_blank"
+                ><img src="/images/tik-tok.png" alt="TikTok" /></a
+              >
+              <a href="https://www.youtube.com/@evoldep/streams" target="_blank"
+              ><img src="/images/youtube.png" alt="Youtube" /></a
+            >
+            </div>
+          </div>
+        </section>
         </div>
-      </section>
+
+  
+       
+
+       
     </main>
     <Footer />
     <WhatsAppButton />

@@ -63,7 +63,7 @@ import { news } from "../data/news"; // Suponiendo que tienes un archivo de dato
             
             <!-- Tres noticias más pequeñas abajo -->
             <div class="news-row">
-              {news.slice(1, 6).map((item) => (
+              {news.slice(1, news.length).map((item) => (
                 <div class="news-small">
                   <img src={item.image} alt={item.title} />
                   <div class="news-content">
