@@ -105,7 +105,7 @@ background-size: cover;
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; 
     height: 70vh;
     
   }
@@ -220,7 +220,7 @@ background-size: cover;
   @media (max-width: 768px) {
 
     .hero h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin: 0;
   }
 
@@ -241,22 +241,26 @@ background-size: cover;
   }
   
   .strengths {
-    grid-template-columns: repeat(1, 1fr); /* 2 columnas para pantallas más pequeñas */
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hero-text {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0;
+    border-radius: 0px;
   }
 
   .hero {
-    background: url('/images/banner.jpg') no-repeat center center;
+    background: url('/images/portada.jpeg') no-repeat center center;
     background-size: cover;
     color: white;
-    text-align: center;
-    padding: 14rem 1rem;
-    position: relative;
+    padding: 10rem 1rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20vh;
+    align-items: end; 
+    height: 30vh;
     
   }
-  
+
+
   }
 </style>
