@@ -1,3 +1,11 @@
+---
+import FirebaseTextLoader from "../components/FirebaseTextLoader.jsx";
+import FirebaseInitializer from "../newData/FirebaseInitializer";
+
+
+---
+
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -185,13 +193,17 @@
   </style>
 </head>
 <body>
+  <FirebaseInitializer document="index" client:only="react"/>
+
+
   <div class="hero">
     <img src="/images/logo.png" alt="Club Evolución Deportiva" class="logo">
-    <h1>Bienvenido a Club Evolución Deportiva</h1>
-    <p>Forjando seres íntegros para la evolución de una sociedad.</p>
+    <h1> <FirebaseTextLoader typeText="titulo" client:only="react" /></h1>
+    <p> <FirebaseTextLoader typeText="subtitulo" client:only="react" /></p>
+
     <div class="container">
       <div class="buttons">
-        <a href="./inicio" class="button"><i class="fas fa-globe"></i> Visita nuestra página web</a>
+        <a href="./inicio" class="button"><i class="fas fa-globe"></i> <FirebaseTextLoader typeText="boton" client:only="react" /></a>
       </div>
       <div class="social-icons">
         <a href="https://www.facebook.com/evoldep" target="_blank"><img src="/images/facebook.png" alt="Facebook"></a>

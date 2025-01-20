@@ -36,9 +36,9 @@ export const news = [
     description: "¡No te pierdas los partidos del Club Evolución Deportiva transmitidos en vivo por nuestro canal de YouTube!",
     image: "/images/noticias/youtube.png",
     content: `
-      📺 ¡Estamos emocionados de anunciar que podrás seguir los partidos de nuestro club en vivo a través de nuestro canal de YouTube!
-      ⚽️ Acompaña a nuestros equipos en cada encuentro y no te pierdas ningún momento de la acción.
-      🎥 ¡Suscríbete a nuestro canal y activa las notificaciones para no perderte nada!
+      📺 ¡Estamos emocionados de anunciar que podrás seguir los partidos de nuestro club en vivo a través de nuestro canal de YouTube!<br>
+      ⚽️ Acompaña a nuestros equipos en cada encuentro y no te pierdas ningún momento de la acción.<br>
+      🎥 ¡Suscríbete a nuestro canal y activa las notificaciones para no perderte nada!<br><br>
       #PartidosEnVivo #Evoldep #ClubDeportivo #Futbol #SoyFelino #TransmisionesEnVivo
     `
   },
@@ -48,11 +48,11 @@ export const news = [
     description: "Celebramos el logro de nuestro entrenador, Fernando Andrés Viafara, quien se ha graduado como Tecnólogo en Deporte.",
     image: "/images/noticias/grado.png",
     content: `
-      ¡Tenemos un nuevo graduado en la casa tricolor! 🎓🧡🤍💙
-      📚 Nuestro entrenador formador: Fernando Andrés Viafara Hurtado, ha alcanzado un hito importante: ¡se ha graduado como Tecnólogo en Deporte de la END! 🤩
-      🌟 Su dedicación y pasión por el deporte son inspiración para todos nosotros.
-      🏆 ¡Felicidades por este gran logro y gracias por guiar a nuestros atletas hacia el éxito!
-      🎉 Resaltamos que en este momento se encuentra en la recta final en la misma institución universitaria para recibir el título de profesional en deporte. 🐯
+      ¡Tenemos un nuevo graduado en la casa tricolor! 🎓🧡🤍💙<br>
+      📚 Nuestro entrenador formador: Fernando Andrés Viafara Hurtado, ha alcanzado un hito importante: ¡se ha graduado como Tecnólogo en Deporte de la END! 🤩<br>
+      🌟 Su dedicación y pasión por el deporte son inspiración para todos nosotros.<br>
+      🏆 ¡Felicidades por este gran logro y gracias por guiar a nuestros atletas hacia el éxito!<br>
+      🎉 Resaltamos que en este momento se encuentra en la recta final en la misma institución universitaria para recibir el título de profesional en deporte. 🐯<br><br>
 
       #TecnologoEndeporte #graduacion #Evoldep #Entrenador #OrgulloFloridano #SoyFelino #ClubDeportivo
     `
@@ -63,9 +63,9 @@ export const news = [
     description: "Nuestros jugadores participaron en veedurías con el equipo profesional Internacional F.C. de Palmira.",
     image: "/images/noticias/veedurias.jpg",
     content: `
-      ¡EVOLUCIÓN DEPORTIVA organizó veedurías con el equipo profesional Internacional F.C. de Palmira!
-      ⚽️ Nuestros jugadores de las categorías sub 15, sub 14 y sub 13 participaron en estas importantes visorias con el scout Jorge Peralta. Se destacaron 6 jugadores que continuarán al siguiente filtro.
-      🧡🤍💙 ¡Nos sentimos orgullosos y entusiasmados por este nuevo capítulo de nuestros deportistas! 💪
+      ¡EVOLUCIÓN DEPORTIVA organizó veedurías con el equipo profesional Internacional F.C. de Palmira!<br>
+      ⚽️ Nuestros jugadores de las categorías sub 15, sub 14 y sub 13 participaron en estas importantes visorias con el scout Jorge Peralta. Se destacaron 6 jugadores que continuarán al siguiente filtro.<br>
+      🧡🤍💙 ¡Nos sentimos orgullosos y entusiasmados por este nuevo capítulo de nuestros deportistas! 💪<br>
 
       #Veedurias #Evoldep #Futbol #Scout #SoyFelino #ClubDeportivo
     `
@@ -91,7 +91,7 @@ export const news = [
   }
 ,  
   {
-    id: "5",
+    id: "principal",
     title: "¡Veedurías, esta vez con el Club Deportivo Fútbol Paz de Cali! ⚽️",
     description: "Nuestros jugadores de las categorías sub-15, sub-14 y sub-13 participaron en estas importantes visorias con el preparador físico de esta destacada institución.",
     image: "/images/noticias/veedurias3.jpg",
@@ -124,8 +124,8 @@ export const news = [
     description: "Mantente al tanto de las próximas noticias y actualizaciones del Club Evolución Deportiva.",
     image: "/images/noticias/proxi.png",
     content: `
-      📢 ¡Próximamente más noticias y actualizaciones importantes!
-      🧡🤍💙 Mantente al tanto de lo que sucede en nuestro club y no te pierdas las novedades.
+      📢 ¡Próximamente más noticias y actualizaciones importantes!<br>
+      🧡🤍💙 Mantente al tanto de lo que sucede en nuestro club y no te pierdas las novedades.<br>
       #Evoldep #Noticias #Próximamente #SoyFelino #ClubDeportivo
     `
   }
