@@ -1,0 +1,1 @@
+import{j as r}from"./jsx-runtime.EU_jUVUh.js";import"./index.P85FK12k.js";import{u as o}from"./firebaseStore.5xH7vNSn.js";import"./firebase.CpjwWxYd.js";const n=({typeText:t})=>{const{texts:e}=o();return r.jsx(r.Fragment,{children:e?.[t]})};export{n as default};

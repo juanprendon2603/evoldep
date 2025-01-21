@@ -1,0 +1,1 @@
+import{r as a}from"./index.P85FK12k.js";import{g as i}from"./firebaseService.Cua1MMyI.js";import{u as s}from"./firebaseStore.5xH7vNSn.js";import"./firebase.CpjwWxYd.js";const p=t=>{const{setTexts:r}=s();a.useEffect(()=>{(async()=>{try{const e=await i("pagina",t.document);r(e)}catch(e){console.log("Error al cargar las transacciones iniciales",e)}})()},[])};export{p as default};
